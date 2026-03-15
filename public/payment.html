@@ -14,7 +14,7 @@
 <h2>Complete Payment</h2>
 
 <p class="details">
-Mentor: Sneha Kapoor
+Mentor: <span id="mentor"></span>
 </p>
 
 <p class="details">
@@ -31,15 +31,18 @@ Pay Now
 
 </div>
 
+
 <script>
 
 window.onload = function(){
 
 let price = localStorage.getItem("price");
 let duration = localStorage.getItem("duration");
+let mentor = localStorage.getItem("mentorName");
 
 document.getElementById("price").innerText = price;
 document.getElementById("duration").innerText = duration;
+document.getElementById("mentor").innerText = mentor;
 
 }
 

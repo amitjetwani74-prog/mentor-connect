@@ -46,7 +46,7 @@
 
 <p class="price">30 min ₹49</p>
 
-<button onclick="location.href='booking.html'">Book Session</button>
+<button onclick="bookSession('Rahul Sharma')">Book Session</button>
 
 </div>
 
@@ -65,7 +65,7 @@
 
 <p class="price">30 min ₹49</p>
 
-<button onclick="location.href='booking.html'">Book Session</button>
+<button onclick="bookSession('Sneha Kapoor')">Book Session</button>
 
 </div>
 
@@ -84,13 +84,26 @@
 
 <p class="price">30 min ₹49</p>
 
-<button onclick="location.href='booking.html'">Book Session</button>
+<button onclick="bookSession('Aman Verma')">Book Session</button>
 
 </div>
 
 </div>
 
 </section>
+
+
+<script>
+
+function bookSession(name){
+
+localStorage.setItem("mentorName", name);
+
+window.location.href = "booking.html";
+
+}
+
+</script>
 
 </body>
 </html>
