@@ -1,40 +1,35 @@
 <!DOCTYPE html>
 <html>
-
 <head>
+
 <title>Payment</title>
+<link rel="stylesheet" href="css/payment.css">
+
 </head>
 
 <body>
 
-<h2>Payment</h2>
+<div class="payment-container">
 
-<p id="info"></p>
+<h2>Complete Payment</h2>
 
-<button onclick="pay()">Pay Now</button>
+<p class="details">
+Mentor: Sneha Kapoor
+</p>
 
-<script>
+<p class="details">
+Session Duration: 30 Minutes
+</p>
 
-const mentor = localStorage.getItem("mentor")
-const duration = localStorage.getItem("duration")
+<p class="amount">
+Amount to Pay: ₹49
+</p>
 
-let price = duration == 30 ? 49 : 89
+<button onclick="alert('Payment Successful! Session Booked.')">
+Pay Now
+</button>
 
-document.getElementById("info").innerText =
-"Mentor : "+mentor+
-" | Duration : "+duration+
-" minutes | Amount : ₹"+price
-
-function pay(){
-
-alert("Payment Successful! Session Booked")
-
-window.location.href="profile.html"
-
-}
-
-</script>
+</div>
 
 </body>
-
 </html>
