@@ -1,43 +1,56 @@
 const mentors = [
-
-{ name:"Rahul Sharma", field:"Frontend Developer", exp:"7 years" },
-{ name:"Sneha Kapoor", field:"UI/UX Designer", exp:"6 years" },
-{ name:"Vikram Patel", field:"Backend Engineer", exp:"8 years" },
-{ name:"Ananya Mehta", field:"Product Manager", exp:"5 years" },
-{ name:"Rohit Verma", field:"Data Scientist", exp:"9 years" },
-{ name:"Neha Gupta", field:"Cloud Engineer", exp:"6 years" },
-{ name:"Arjun Singh", field:"DevOps Engineer", exp:"7 years" },
-{ name:"Priya Jain", field:"AI Engineer", exp:"5 years" },
-{ name:"Kunal Shah", field:"Mobile App Developer", exp:"8 years" },
-{ name:"Megha Bansal", field:"Cybersecurity Expert", exp:"6 years" }
-
+{
+name:"Rahul Sharma",
+skill:"Frontend Developer",
+experience:"7 years",
+price30:49,
+price60:89
+},
+{
+name:"Sneha Kapoor",
+skill:"UI/UX Designer",
+experience:"6 years",
+price30:49,
+price60:89
+},
+{
+name:"Amit Patel",
+skill:"Data Scientist",
+experience:"8 years",
+price30:49,
+price60:89
+}
 ]
 
-const grid = document.getElementById("mentorGrid")
+const mentorGrid = document.getElementById("mentorGrid")
 
 mentors.forEach(m => {
 
-grid.innerHTML += `
+mentorGrid.innerHTML += `
 <div class="card">
 
 <h3>${m.name}</h3>
+<p>${m.skill}</p>
+<p>${m.experience} experience</p>
 
-<p>${m.field}</p>
+<p>30 min : ₹${m.price30}</p>
+<p>1 hour : ₹${m.price60}</p>
 
-<p>${m.exp} experience</p>
-
-<p class="verified">✔ Verified Mentor</p>
-
-<div class="price">
-
-<p>30 minutes : ₹49</p>
-<p>1 hour : ₹89</p>
-
-</div>
-
-<button>Book Session</button>
+<button onclick="bookSession('${m.name}',${m.price30},${m.price60})">
+Book Session
+</button>
 
 </div>
 `
 
 })
+
+function bookSession(name,price30,price60){
+
+localStorage.setItem("mentor",name)
+localStorage.setItem("price30",price30)
+localStorage.setItem("price60",price60)
+
+window.location.href="booking.html"
+
+}

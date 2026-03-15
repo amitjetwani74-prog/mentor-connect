@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<title>Payment</title>
+</head>
+
+<body>
+
+<h2>Payment</h2>
+
+<p id="info"></p>
+
+<button onclick="pay()">Pay Now</button>
+
+<script>
+
+const mentor = localStorage.getItem("mentor")
+const duration = localStorage.getItem("duration")
+
+let price = duration == 30 ? 49 : 89
+
+document.getElementById("info").innerText =
+"Mentor : "+mentor+
+" | Duration : "+duration+
+" minutes | Amount : ₹"+price
+
+function pay(){
+
+alert("Payment Successful! Session Booked")
+
+window.location.href="profile.html"
+
+}
+
+</script>
+
+</body>
+
+</html>

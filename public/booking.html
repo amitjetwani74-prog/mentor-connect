@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<title>Book Session</title>
+</head>
+
+<body>
+
+<h2>Book Session</h2>
+
+<p id="mentor"></p>
+
+<select id="duration">
+
+<option value="30">30 Minutes</option>
+<option value="60">1 Hour</option>
+
+</select>
+
+<br><br>
+
+<button onclick="goPayment()">Proceed to Payment</button>
+
+<script>
+
+const mentor = localStorage.getItem("mentor")
+
+document.getElementById("mentor").innerText =
+"Mentor : " + mentor
+
+function goPayment(){
+
+const duration = document.getElementById("duration").value
+
+localStorage.setItem("duration",duration)
+
+window.location.href="payment.html"
+
+}
+
+</script>
+
+</body>
+
+</html>
