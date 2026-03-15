@@ -31,14 +31,17 @@ Pay Now
 
 </div>
 
-
 <script>
+
+window.onload = function(){
 
 let price = localStorage.getItem("price");
 let duration = localStorage.getItem("duration");
 
 document.getElementById("price").innerText = price;
 document.getElementById("duration").innerText = duration;
+
+}
 
 </script>
 
