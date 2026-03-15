@@ -2,44 +2,32 @@
 <html>
 
 <head>
+
 <title>Book Session</title>
+<link rel="stylesheet" href="css/booking.css">
+
 </head>
 
 <body>
 
-<h2>Book Session</h2>
+<div class="booking-container">
 
-<p id="mentor"></p>
+<h2>Book a Session</h2>
 
-<select id="duration">
+<p class="mentor">Mentor: Sneha Kapoor</p>
 
-<option value="30">30 Minutes</option>
-<option value="60">1 Hour</option>
+<select>
+
+<option>30 Minutes - ₹49</option>
+<option>1 Hour - ₹89</option>
 
 </select>
 
-<br><br>
+<button onclick="location.href='payment.html'">
+Proceed to Payment
+</button>
 
-<button onclick="goPayment()">Proceed to Payment</button>
-
-<script>
-
-const mentor = localStorage.getItem("mentor")
-
-document.getElementById("mentor").innerText =
-"Mentor : " + mentor
-
-function goPayment(){
-
-const duration = document.getElementById("duration").value
-
-localStorage.setItem("duration",duration)
-
-window.location.href="payment.html"
-
-}
-
-</script>
+</div>
 
 </body>
 
