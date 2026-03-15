@@ -15,19 +15,19 @@ if(!name || !email || !password){
 return res.status(400).json({msg:"All fields required"})
 }
 
-const existingUser = await User.findOne({email})
+const existingUser = await User.findOne({ email })
 
 if(existingUser){
 return res.status(400).json({msg:"Email already registered"})
 }
 
 const salt = await bcrypt.genSalt(10)
-const hashedPassword = await bcrypt.hash(password,salt)
+const hashedPassword = await bcrypt.hash(password, salt)
 
 const user = new User({
 name,
 email,
-password:hashedPassword
+password: hashedPassword
 })
 
 await user.save()
