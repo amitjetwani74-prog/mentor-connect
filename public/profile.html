@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<title>Profile</title>
+<link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+<div class="profile">
+
+<h1>Welcome</h1>
+
+<p id="username"></p>
+
+<a href="mentors.html">Explore Mentors</a>
+
+</div>
+
+<script>
+
+const user = JSON.parse(localStorage.getItem("user"))
+
+if(!user){
+window.location.href="login.html"
+}
+
+document.getElementById("username").innerText=user.name
+
+</script>
+
+</body>
+</html>
