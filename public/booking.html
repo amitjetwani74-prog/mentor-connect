@@ -16,18 +16,36 @@
 
 <p class="mentor">Mentor: Sneha Kapoor</p>
 
-<select>
+<select id="duration">
 
-<option>30 Minutes - ₹49</option>
-<option>1 Hour - ₹89</option>
+<option value="49">30 Minutes - ₹49</option>
+<option value="89">1 Hour - ₹89</option>
 
 </select>
 
-<button onclick="location.href='payment.html'">
+<button onclick="goToPayment()">
 Proceed to Payment
 </button>
 
 </div>
+
+
+<script>
+
+function goToPayment(){
+
+let price = document.getElementById("duration").value;
+let duration = document.getElementById("duration").selectedOptions[0].text;
+
+localStorage.setItem("price", price);
+localStorage.setItem("duration", duration);
+
+window.location.href = "payment.html";
+
+}
+
+</script>
+
 
 </body>
 

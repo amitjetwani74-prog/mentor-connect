@@ -18,17 +18,30 @@ Mentor: Sneha Kapoor
 </p>
 
 <p class="details">
-Session Duration: 30 Minutes
+Session Duration: <span id="duration"></span>
 </p>
 
 <p class="amount">
-Amount to Pay: ₹49
+Amount to Pay: ₹<span id="price"></span>
 </p>
+
 <button onclick="location.href='success.html'">
 Pay Now
 </button>
 
 </div>
+
+
+<script>
+
+let price = localStorage.getItem("price");
+let duration = localStorage.getItem("duration");
+
+document.getElementById("price").innerText = price;
+document.getElementById("duration").innerText = duration;
+
+</script>
+
 
 </body>
 </html>
