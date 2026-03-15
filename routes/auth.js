@@ -15,7 +15,7 @@ if(!name || !email || !password){
 return res.status(400).json({msg:"All fields required"})
 }
 
-const existingUser = await User.findOne({ email })
+const existingUser = await User.findOne({ email: email })
 
 if(existingUser){
 return res.status(400).json({msg:"Email already registered"})
