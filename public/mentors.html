@@ -1,10 +1,8 @@
 <!DOCTYPE html>
 <html>
 <head>
-
 <title>Explore Mentors</title>
 <link rel="stylesheet" href="css/mentor.css">
-
 </head>
 
 <body>
@@ -32,60 +30,37 @@
 
 <div class="mentor-grid">
 
-<!-- Mentor 1 -->
 
 <div class="mentor-card">
-
 <img src="https://randomuser.me/api/portraits/men/32.jpg">
-
 <h3>Rahul Sharma</h3>
-
 <p>Frontend Developer</p>
-
 <p>7 years experience</p>
-
 <p class="price">30 min ₹49</p>
 
 <button onclick="bookSession('Rahul Sharma')">Book Session</button>
-
 </div>
 
 
-<!-- Mentor 2 -->
-
 <div class="mentor-card">
-
 <img src="https://randomuser.me/api/portraits/women/45.jpg">
-
 <h3>Sneha Kapoor</h3>
-
 <p>UI/UX Designer</p>
-
 <p>6 years experience</p>
-
 <p class="price">30 min ₹49</p>
 
 <button onclick="bookSession('Sneha Kapoor')">Book Session</button>
-
 </div>
 
 
-<!-- Mentor 3 -->
-
 <div class="mentor-card">
-
 <img src="https://randomuser.me/api/portraits/men/12.jpg">
-
 <h3>Aman Verma</h3>
-
 <p>Product Manager</p>
-
 <p>8 years experience</p>
-
 <p class="price">30 min ₹49</p>
 
 <button onclick="bookSession('Aman Verma')">Book Session</button>
-
 </div>
 
 </div>
@@ -97,13 +72,14 @@
 
 function bookSession(name){
 
-localStorage.setItem("mentorName", name);
+localStorage.setItem("mentorName", name)
 
-window.location.href = "booking.html";
+window.location.href = "booking.html"
 
 }
 
 </script>
+
 
 </body>
 </html>

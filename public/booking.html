@@ -2,10 +2,8 @@
 <html>
 
 <head>
-
 <title>Book Session</title>
 <link rel="stylesheet" href="css/booking.css">
-
 </head>
 
 <body>
@@ -14,12 +12,14 @@
 
 <h2>Book a Session</h2>
 
-<p class="mentor">Mentor: Sneha Kapoor</p>
+<p class="mentor">
+Mentor: <span id="mentor"></span>
+</p>
 
 <select id="duration">
 
-<option value="49">30 Minutes - ₹49</option>
-<option value="89">1 Hour - ₹89</option>
+<option value="49">30 Minutes</option>
+<option value="89">1 Hour</option>
 
 </select>
 
@@ -32,21 +32,30 @@ Proceed to Payment
 
 <script>
 
+window.onload = function(){
+
+let mentor = localStorage.getItem("mentorName")
+
+document.getElementById("mentor").innerText = mentor
+
+}
+
+
 function goToPayment(){
 
-let price = document.getElementById("duration").value;
-let duration = document.getElementById("duration").selectedOptions[0].text;
+let select = document.getElementById("duration")
 
-localStorage.setItem("price", price);
-localStorage.setItem("duration", duration);
+let price = select.value
+let duration = select.options[select.selectedIndex].text
 
-window.location.href = "payment.html";
+localStorage.setItem("price", price)
+localStorage.setItem("duration", duration)
+
+window.location.href = "payment.html"
 
 }
 
 </script>
 
-
 </body>
-
 </html>

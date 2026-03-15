@@ -36,18 +36,18 @@ Pay Now
 
 window.onload = function(){
 
-let price = localStorage.getItem("price");
-let duration = localStorage.getItem("duration");
-let mentor = localStorage.getItem("mentorName");
+document.getElementById("mentor").innerText =
+localStorage.getItem("mentorName")
 
-document.getElementById("price").innerText = price;
-document.getElementById("duration").innerText = duration;
-document.getElementById("mentor").innerText = mentor;
+document.getElementById("duration").innerText =
+localStorage.getItem("duration")
+
+document.getElementById("price").innerText =
+localStorage.getItem("price")
 
 }
 
 </script>
-
 
 </body>
 </html>
