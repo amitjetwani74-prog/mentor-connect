@@ -20,6 +20,20 @@ margin-left:20px;
 text-decoration:none;
 }
 
+/* LOGO */
+
+.logo{
+display:flex;
+align-items:center;
+font-size:22px;
+font-weight:bold;
+}
+
+.logo-img{
+height:38px;
+margin-right:10px;
+}
+
 
 /* HERO */
 
