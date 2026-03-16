@@ -14,6 +14,10 @@ align-items:center;
 padding:20px 60px;
 background:#1e1b4b;
 border-bottom:1px solid rgba(255,255,255,0.1);
+position:sticky;
+top:0;
+z-index:100;
+backdrop-filter:blur(8px);
 }
 
 .logo{
@@ -122,27 +126,46 @@ box-shadow:0 20px 40px rgba(0,0,0,0.4);
 
 /* COMPANY SECTION */
 
+/* COMPANY LOGO STRIP */
+
 .companies{
 text-align:center;
-padding:60px;
-background:#1e1b4b;
-color:white;
+padding:80px 0;
+overflow:hidden;
 }
 
-.company-logos{
+.logo-slider{
+width:100%;
+overflow:hidden;
+margin-top:40px;
+}
+
+.logo-track{
 display:flex;
-justify-content:center;
-gap:40px;
-margin-top:25px;
+gap:80px;
+animation:scroll 25s linear infinite;
 }
 
-.logo-box{
-width:120px;
-height:30px;
-background:#312e81;
-border-radius:6px;
+.logo-track img{
+height:40px;
+opacity:0.7;
+filter:brightness(0) invert(0.9);
+transition:0.3s;
 }
 
+.logo-track img:hover{
+opacity:1;
+transform:scale(1.1);
+}
+
+@keyframes scroll{
+0%{
+transform:translateX(0);
+}
+100%{
+transform:translateX(-50%);
+}
+}
 
 /* HOW IT WORKS */
 
@@ -164,6 +187,12 @@ padding:30px;
 border-radius:12px;
 flex:1;
 color:white;
+transition:0.3s;
+}
+
+.step:hover{
+transform:translateY(-6px);
+box-shadow:0 15px 30px rgba(0,0,0,0.4);
 }
 
 
@@ -193,4 +222,23 @@ border-radius:8px;
 border:1px solid rgba(255,255,255,0.2);
 background:#312e81;
 color:white;
+}
+
+
+@media(max-width:900px){
+
+.hero{
+flex-direction:column;
+text-align:center;
+}
+
+.hero-card img{
+margin-top:40px;
+width:100%;
+}
+
+.steps{
+flex-direction:column;
+}
+
 }
