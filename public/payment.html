@@ -2,52 +2,139 @@
 <html>
 <head>
 
-<title>Payment</title>
+<title>Checkout</title>
 <link rel="stylesheet" href="css/payment.css">
 
 </head>
 
 <body>
 
-<div class="payment-container">
+<div class="checkout-page">
 
-<h2>Complete Payment</h2>
+<h2>Checkout</h2>
 
-<p class="details">
-Mentor: <span id="mentor"></span>
-</p>
 
-<p class="details">
-Session Duration: <span id="duration"></span>
-</p>
+<div class="summary-card">
 
-<p class="amount">
-Amount to Pay: ₹<span id="price"></span>
-</p>
+<div class="mentor-info">
 
-<button onclick="location.href='success.html'">
-Pay Now
-</button>
+<img src="https://randomuser.me/api/portraits/women/44.jpg">
+
+<div>
+
+<h3 id="mentorName"></h3>
+
+<p id="sessionTime"></p>
+<p id="sessionDuration"></p>
+
+</div>
 
 </div>
 
 
+<hr>
+
+
+<div class="price-row">
+<span>Session Fee</span>
+<span>₹<span id="sessionPrice"></span></span>
+</div>
+
+<div class="price-row">
+<span>Service Fee</span>
+<span>₹5</span>
+</div>
+
+
+<div class="total-row">
+<span>Total Amount</span>
+<span>₹<span id="totalPrice"></span></span>
+</div>
+
+</div>
+
+
+
+<h3>Payment Method</h3>
+
+
+<div class="payment-option active">
+
+<div>
+<strong>UPI Payment</strong>
+<p>Google Pay, PhonePe, Paytm</p>
+</div>
+
+<input type="radio" checked>
+
+</div>
+
+
+<div class="payment-option">
+
+<div>
+<strong>Credit / Debit Card</strong>
+<p>Visa, Mastercard, RuPay</p>
+</div>
+
+<input type="radio">
+
+</div>
+
+
+<div class="payment-option">
+
+<div>
+<strong>Net Banking</strong>
+<p>Secure login to your bank</p>
+</div>
+
+<input type="radio">
+
+</div>
+
+
+
+<button class="pay-btn" onclick="payNow()">
+Pay ₹<span id="payButtonPrice"></span> Now →
+</button>
+
+
+<p class="secure">
+Safe & Secure Environment
+</p>
+
+
+</div>
+
+
+
 <script>
 
-window.onload = function(){
+let mentor = localStorage.getItem("mentorName")
+let duration = localStorage.getItem("duration")
+let price = Number(localStorage.getItem("price"))
 
-document.getElementById("mentor").innerText =
-localStorage.getItem("mentorName")
+let serviceFee = 5
+let total = price + serviceFee
 
-document.getElementById("duration").innerText =
-localStorage.getItem("duration")
 
-document.getElementById("price").innerText =
-localStorage.getItem("price")
+document.getElementById("mentorName").innerText = mentor
+document.getElementById("sessionDuration").innerText = duration
+document.getElementById("sessionTime").innerText = "Online Session"
+document.getElementById("sessionPrice").innerText = price
+document.getElementById("totalPrice").innerText = total
+document.getElementById("payButtonPrice").innerText = total
+
+
+function payNow(){
+
+window.location.href = "success.html"
 
 }
 
 </script>
+
 
 </body>
 </html>
