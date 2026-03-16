@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<title>User Dashboard</title>
+<link rel="stylesheet" href="css/dashboard.css">
+
+</head>
+
+<body>
+
+<div class="dashboard">
+
+<div class="topbar">
+
+<div class="logo">
+<img src="images/logo-icon.png">
+<span>MentorConnect</span>
+</div>
+
+<div class="icons">
+🔔 ⚙️
+<img class="avatar" src="https://randomuser.me/api/portraits/men/32.jpg">
+</div>
+
+</div>
+
+
+<h2>Hello, Alex!</h2>
+<p class="subtitle">Your upcoming mentorship sessions</p>
+
+
+<h3 class="section-title">Upcoming Sessions</h3>
+
+
+<div class="session-card">
+
+<div class="date">
+<span>OCT</span>
+<strong>24</strong>
+</div>
+
+<div class="session-info">
+
+<h4 id="sessionTitle">Mentorship Session</h4>
+
+<p>
+With <span id="mentorName"></span>
+</p>
+
+<button class="join-btn">
+Join Call
+</button>
+
+</div>
+
+</div>
+
+
+
+<h3 class="section-title">Recent Activity</h3>
+
+<div class="activity">
+
+<p>✔ Session completed</p>
+<p>✉ New message from mentor</p>
+<p>⭐ Feedback submitted</p>
+
+</div>
+
+
+
+<div class="suggested">
+
+<h3>Suggested Mentors</h3>
+
+<div class="mentor">
+
+<img src="https://randomuser.me/api/portraits/women/44.jpg">
+
+<div>
+<strong>Elena Rodriguez</strong>
+<p>Product Manager ⭐ 4.9</p>
+</div>
+
+<button>+</button>
+
+</div>
+
+
+<div class="mentor">
+
+<img src="https://randomuser.me/api/portraits/men/45.jpg">
+
+<div>
+<strong>James Wilson</strong>
+<p>Fullstack Architect ⭐ 5.0</p>
+</div>
+
+<button>+</button>
+
+</div>
+
+
+<button class="explore-btn">
+Explore All Mentors
+</button>
+
+</div>
+
+
+
+<div class="bottom-nav">
+
+<span>Home</span>
+<span>Explore</span>
+<span>Calendar</span>
+<span>Profile</span>
+
+</div>
+
+
+</div>
+
+
+
+<script>
+
+let mentor = localStorage.getItem("mentorName")
+
+if(mentor){
+document.getElementById("mentorName").innerText = mentor
+}
+
+</script>
+
+
+</body>
+</html>
