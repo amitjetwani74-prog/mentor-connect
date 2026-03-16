@@ -1,63 +1,152 @@
 body{
 margin:0;
 font-family:Arial;
+background:linear-gradient(135deg,#4f46e5,#6366f1);
 height:100vh;
-
 display:flex;
 justify-content:center;
 align-items:center;
-
-background:linear-gradient(135deg,#4f46e5,#6366f1);
+color:#333;
 }
 
-/* CARD */
+.login-page{
+width:420px;
+}
 
-.auth-container{
+.login-header{
+display:flex;
+justify-content:space-between;
+align-items:center;
+margin-bottom:20px;
+color:white;
+}
+
+.logo{
+display:flex;
+align-items:center;
+font-weight:bold;
+font-size:20px;
+}
+
+.logo img{
+height:35px;
+margin-right:10px;
+}
+
+.support{
+color:white;
+cursor:pointer;
+}
+
+
+.login-card{
 background:white;
 padding:40px;
-border-radius:10px;
-width:350px;
-
-box-shadow:0 10px 25px rgba(0,0,0,0.2);
-
+border-radius:20px;
+box-shadow:0 10px 30px rgba(0,0,0,0.15);
 text-align:center;
 }
 
-/* INPUT */
+.login-card h2{
+margin-bottom:5px;
+}
+
+.subtitle{
+color:#777;
+margin-bottom:25px;
+}
+
+
+.social-login{
+display:flex;
+gap:10px;
+margin-bottom:20px;
+}
+
+.social-login button{
+flex:1;
+padding:10px;
+border-radius:25px;
+border:1px solid #ddd;
+background:white;
+cursor:pointer;
+display:flex;
+align-items:center;
+justify-content:center;
+gap:8px;
+}
+
+.social-login img{
+height:18px;
+}
+
+
+.divider{
+margin:20px 0;
+font-size:12px;
+color:#888;
+position:relative;
+}
+
+.divider span{
+background:white;
+padding:0 10px;
+}
+
 
 input{
 width:100%;
 padding:12px;
-margin-top:15px;
-
+margin-top:10px;
+border-radius:25px;
 border:1px solid #ddd;
-border-radius:5px;
+outline:none;
 }
 
-/* BUTTON */
+.password-box{
+position:relative;
+}
 
-button{
+.forgot{
+font-size:12px;
+position:absolute;
+right:10px;
+top:-20px;
+color:#4f46e5;
+cursor:pointer;
+}
+
+.login-btn{
 width:100%;
-padding:12px;
 margin-top:20px;
-
+padding:14px;
+border:none;
+border-radius:25px;
 background:#4f46e5;
 color:white;
-
-border:none;
-border-radius:5px;
-
+font-size:16px;
 cursor:pointer;
+}
+
+.signup-link{
+margin-top:20px;
+font-size:14px;
+}
+
+.signup-link a{
+color:#4f46e5;
+text-decoration:none;
 font-weight:bold;
 }
 
-/* LINK */
-
-p{
+.footer{
+text-align:center;
 margin-top:20px;
+font-size:12px;
+color:white;
 }
 
-a{
-color:#4f46e5;
-text-decoration:none;
+.footer a{
+margin:0 8px;
+cursor:pointer;
 }

@@ -1,8 +1,10 @@
 <!DOCTYPE html>
 <html>
 <head>
+
 <title>Explore Mentors</title>
 <link rel="stylesheet" href="css/mentor.css">
+
 </head>
 
 <body>
@@ -11,21 +13,8 @@
 
 <h2 class="title">Explore Mentors</h2>
 
-<!-- SEARCH -->
-
 <input class="search" placeholder="Search by name, role, or skill">
 
-<!-- FILTERS -->
-
-<div class="filters">
-<button class="active">All Mentors</button>
-<button>UI/UX</button>
-<button>Backend</button>
-<button>Marketing</button>
-</div>
-
-
-<!-- MENTOR LIST -->
 
 <div class="mentor-card">
 
@@ -53,9 +42,23 @@
 <p class="time">/ 30 min</p>
 </div>
 
+<div>
+
+<button onclick="viewProfile(
+'Arjun Mehta',
+'Senior UI/UX Designer',
+'Google • 8+ years exp.',
+'https://randomuser.me/api/portraits/men/32.jpg',
+'Expert in UX strategy helping startups build better products.'
+)">
+View
+</button>
+
 <button onclick="bookSession('Arjun Mehta')">
 Book Now
 </button>
+
+</div>
 
 </div>
 
@@ -91,9 +94,23 @@ Book Now
 <p class="time">/ 30 min</p>
 </div>
 
+<div>
+
+<button onclick="viewProfile(
+'Priya Sharma',
+'Lead Backend Engineer',
+'Microsoft • 6+ years exp.',
+'https://randomuser.me/api/portraits/women/44.jpg',
+'Backend architect with deep expertise in scalable cloud systems.'
+)">
+View
+</button>
+
 <button onclick="bookSession('Priya Sharma')">
 Book Now
 </button>
+
+</div>
 
 </div>
 
@@ -129,9 +146,23 @@ Book Now
 <p class="time">/ 30 min</p>
 </div>
 
+<div>
+
+<button onclick="viewProfile(
+'Rohan Das',
+'Growth Marketer',
+'Zomato • 5+ years exp.',
+'https://randomuser.me/api/portraits/men/54.jpg',
+'Growth marketing specialist helping startups scale user acquisition.'
+)">
+View
+</button>
+
 <button onclick="bookSession('Rohan Das')">
 Book Now
 </button>
+
+</div>
 
 </div>
 
@@ -167,6 +198,18 @@ Book Now
 <p class="time">/ 30 min</p>
 </div>
 
+<div>
+
+<button onclick="viewProfile(
+'Anjali Verma',
+'Senior Product Manager',
+'Amazon • 7+ years exp.',
+'https://randomuser.me/api/portraits/women/68.jpg',
+'Product leader helping teams build impactful digital products.'
+)">
+View
+</button>
+
 <button onclick="bookSession('Anjali Verma')">
 Book Now
 </button>
@@ -180,7 +223,29 @@ Book Now
 </div>
 
 
+
+</div>
+
+
+
 <script>
+
+function viewProfile(name, role, exp, image, about){
+
+let mentor = {
+name:name,
+role:role,
+exp:exp,
+image:image,
+about:about
+}
+
+localStorage.setItem("mentorProfile", JSON.stringify(mentor))
+
+window.location.href = "mentor-profile.html"
+
+}
+
 
 function bookSession(name){
 

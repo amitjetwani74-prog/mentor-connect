@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<title>Mentor Profile</title>
+<link rel="stylesheet" href="css/profile.css">
+
+</head>
+
+<body>
+
+<div class="profile-container">
+
+<img id="mentor-img" class="profile-img">
+
+<h2 id="mentor-name"></h2>
+
+<p id="mentor-role" class="role"></p>
+
+<p id="mentor-exp" class="exp"></p>
+
+
+<div class="stats">
+
+<div>
+<h3>4.9</h3>
+<p>Rating</p>
+</div>
+
+<div>
+<h3>124</h3>
+<p>Sessions</p>
+</div>
+
+<div>
+<h3>15</h3>
+<p>Reviews</p>
+</div>
+
+</div>
+
+
+<div class="about">
+
+<h3>About</h3>
+
+<p id="mentor-about"></p>
+
+</div>
+
+
+<div class="actions">
+
+<button onclick="bookSession()">Book a Session</button>
+
+</div>
+
+</div>
+
+
+<script>
+
+let mentor = JSON.parse(localStorage.getItem("mentorProfile"))
+
+document.getElementById("mentor-name").innerText = mentor.name
+document.getElementById("mentor-role").innerText = mentor.role
+document.getElementById("mentor-exp").innerText = mentor.exp
+document.getElementById("mentor-img").src = mentor.image
+document.getElementById("mentor-about").innerText = mentor.about
+
+
+function bookSession(){
+
+localStorage.setItem("mentorName", mentor.name)
+
+window.location.href = "booking.html"
+
+}
+
+</script>
+
+</body>
+</html>
