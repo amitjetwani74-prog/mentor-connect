@@ -7,65 +7,177 @@
 
 <body>
 
-<nav class="navbar">
+<div class="container">
 
-<div class="logo">
-<img src="images/logo-icon.png" class="logo-img">
-<span>MentorConnect</span>
+<h2 class="title">Explore Mentors</h2>
+
+<!-- SEARCH -->
+
+<input class="search" placeholder="Search by name, role, or skill">
+
+<!-- FILTERS -->
+
+<div class="filters">
+<button class="active">All Mentors</button>
+<button>UI/UX</button>
+<button>Backend</button>
+<button>Marketing</button>
 </div>
+
+
+<!-- MENTOR LIST -->
+
+<div class="mentor-card">
+
+<img src="https://randomuser.me/api/portraits/men/32.jpg">
+
+<div class="mentor-info">
+
+<div class="mentor-top">
+<h3>Arjun Mehta</h3>
+<span class="rating">⭐ 4.9</span>
+</div>
+
+<p class="role">Senior UI/UX Designer</p>
+<p class="company">Google • 8+ years exp.</p>
+
+<div class="tags">
+<span>Figma</span>
+<span>Prototyping</span>
+</div>
+
+<div class="bottom">
 
 <div>
-<a href="index.html">Home</a>
-<a href="mentors.html">Explore Mentors</a>
-<a href="login.html">Login</a>
-<a href="signup.html">Signup</a>
+<p class="price">₹49</p>
+<p class="time">/ 30 min</p>
 </div>
 
-</nav>
+<button onclick="bookSession('Arjun Mehta')">
+Book Now
+</button>
 
+</div>
 
-<section class="mentors-section">
+</div>
 
-<h1>Explore Mentors</h1>
+</div>
 
-<div class="mentor-grid">
 
 
 <div class="mentor-card">
-<img src="https://randomuser.me/api/portraits/men/32.jpg">
-<h3>Rahul Sharma</h3>
-<p>Frontend Developer</p>
-<p>7 years experience</p>
-<p class="price">30 min ₹49</p>
 
-<button onclick="bookSession('Rahul Sharma')">Book Session</button>
+<img src="https://randomuser.me/api/portraits/women/44.jpg">
+
+<div class="mentor-info">
+
+<div class="mentor-top">
+<h3>Priya Sharma</h3>
+<span class="rating">⭐ 5.0</span>
 </div>
+
+<p class="role">Lead Backend Engineer</p>
+<p class="company">Microsoft • 6+ years exp.</p>
+
+<div class="tags">
+<span>Node.js</span>
+<span>AWS</span>
+</div>
+
+<div class="bottom">
+
+<div>
+<p class="price">₹49</p>
+<p class="time">/ 30 min</p>
+</div>
+
+<button onclick="bookSession('Priya Sharma')">
+Book Now
+</button>
+
+</div>
+
+</div>
+
+</div>
+
 
 
 <div class="mentor-card">
-<img src="https://randomuser.me/api/portraits/women/45.jpg">
-<h3>Sneha Kapoor</h3>
-<p>UI/UX Designer</p>
-<p>6 years experience</p>
-<p class="price">30 min ₹49</p>
 
-<button onclick="bookSession('Sneha Kapoor')">Book Session</button>
+<img src="https://randomuser.me/api/portraits/men/54.jpg">
+
+<div class="mentor-info">
+
+<div class="mentor-top">
+<h3>Rohan Das</h3>
+<span class="rating">⭐ 4.8</span>
 </div>
+
+<p class="role">Growth Marketer</p>
+<p class="company">Zomato • 5+ years exp.</p>
+
+<div class="tags">
+<span>SEO</span>
+<span>Ads</span>
+</div>
+
+<div class="bottom">
+
+<div>
+<p class="price">₹49</p>
+<p class="time">/ 30 min</p>
+</div>
+
+<button onclick="bookSession('Rohan Das')">
+Book Now
+</button>
+
+</div>
+
+</div>
+
+</div>
+
 
 
 <div class="mentor-card">
-<img src="https://randomuser.me/api/portraits/men/12.jpg">
-<h3>Aman Verma</h3>
-<p>Product Manager</p>
-<p>8 years experience</p>
-<p class="price">30 min ₹49</p>
 
-<button onclick="bookSession('Aman Verma')">Book Session</button>
+<img src="https://randomuser.me/api/portraits/women/68.jpg">
+
+<div class="mentor-info">
+
+<div class="mentor-top">
+<h3>Anjali Verma</h3>
+<span class="rating">⭐ 4.9</span>
+</div>
+
+<p class="role">Senior Product Manager</p>
+<p class="company">Amazon • 7+ years exp.</p>
+
+<div class="tags">
+<span>Agile</span>
+<span>Strategy</span>
+</div>
+
+<div class="bottom">
+
+<div>
+<p class="price">₹49</p>
+<p class="time">/ 30 min</p>
+</div>
+
+<button onclick="bookSession('Anjali Verma')">
+Book Now
+</button>
+
 </div>
 
 </div>
 
-</section>
+</div>
+
+</div>
 
 
 <script>
@@ -79,7 +191,6 @@ window.location.href = "booking.html"
 }
 
 </script>
-
 
 </body>
 </html>
