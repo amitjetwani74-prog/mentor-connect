@@ -1,261 +1,119 @@
 <!DOCTYPE html>
 <html>
-<head>
 
+<head>
 <title>Explore Mentors</title>
 <link rel="stylesheet" href="css/mentor.css">
-
 </head>
 
 <body>
 
-<div class="container">
+<h1 class="page-title">Explore Mentors</h1>
 
-<h2 class="title">Explore Mentors</h2>
+<div class="search-bar">
+<input id="searchInput" type="text" placeholder="Search by name, role, or skill">
+</div>
 
-<input class="search" placeholder="Search by name, role, or skill">
+<!-- FILTERS -->
+
+<div class="filters">
+<button onclick="filterMentors('all')">All Mentors</button>
+<button onclick="filterMentors('uiux')">UI/UX</button>
+<button onclick="filterMentors('backend')">Backend</button>
+<button onclick="filterMentors('product')">Product</button>
+<button onclick="filterMentors('growth')">Growth</button>
+</div>
 
 
-<div class="mentor-card">
+<div class="mentor-container" id="mentorList">
 
-<img src="https://randomuser.me/api/portraits/men/32.jpg">
+<!-- Mentor 1 -->
+
+<div class="mentor-card" data-skill="uiux">
+
+<img class="mentor-img" src="https://randomuser.me/api/portraits/men/32.jpg">
 
 <div class="mentor-info">
 
-<div class="mentor-top">
-<h3>Arjun Mehta</h3>
-<span class="rating">⭐ 4.9</span>
-</div>
+<div class="mentor-name">Arjun Mehta</div>
+<div class="rating">⭐ 4.9</div>
 
-<p class="role">Senior UI/UX Designer</p>
-<p class="company">Google • 8+ years exp.</p>
+<div class="mentor-role">Senior UI/UX Designer</div>
+<div class="mentor-company">Google • 8+ years exp.</div>
 
 <div class="tags">
-<span>Figma</span>
-<span>Prototyping</span>
+<span class="tag">Figma</span>
+<span class="tag">Prototyping</span>
 </div>
 
-<div class="bottom">
+<div class="price">₹49 / 30 min</div>
 
-<div>
-<p class="price">₹49</p>
-<p class="time">/ 30 min</p>
-</div>
-
-<div>
-
-<button onclick="viewProfile(
-'Arjun Mehta',
-'Senior UI/UX Designer',
-'Google • 8+ years exp.',
-'https://randomuser.me/api/portraits/men/32.jpg',
-'Expert in UX strategy helping startups build better products.'
-)">
-View
-</button>
-
-<button onclick="bookSession('Arjun Mehta')">
-Book Now
-</button>
-
+<div class="card-buttons">
+<button onclick="openPopup('Arjun Mehta','Senior UI/UX Designer','8 years experience','Figma, Prototyping')">View</button>
+<button class="book-btn">Book Now</button>
 </div>
 
 </div>
-
-</div>
-
 </div>
 
 
+<!-- Mentor 2 -->
 
-<div class="mentor-card">
+<div class="mentor-card" data-skill="backend">
 
-<img src="https://randomuser.me/api/portraits/women/44.jpg">
+<img class="mentor-img" src="https://randomuser.me/api/portraits/women/45.jpg">
 
 <div class="mentor-info">
 
-<div class="mentor-top">
-<h3>Priya Sharma</h3>
-<span class="rating">⭐ 5.0</span>
-</div>
+<div class="mentor-name">Priya Sharma</div>
+<div class="rating">⭐ 5.0</div>
 
-<p class="role">Lead Backend Engineer</p>
-<p class="company">Microsoft • 6+ years exp.</p>
+<div class="mentor-role">Lead Backend Engineer</div>
+<div class="mentor-company">Microsoft • 6+ years exp.</div>
 
 <div class="tags">
-<span>Node.js</span>
-<span>AWS</span>
+<span class="tag">Node.js</span>
+<span class="tag">AWS</span>
 </div>
 
-<div class="bottom">
+<div class="price">₹49 / 30 min</div>
 
-<div>
-<p class="price">₹49</p>
-<p class="time">/ 30 min</p>
-</div>
-
-<div>
-
-<button onclick="viewProfile(
-'Priya Sharma',
-'Lead Backend Engineer',
-'Microsoft • 6+ years exp.',
-'https://randomuser.me/api/portraits/women/44.jpg',
-'Backend architect with deep expertise in scalable cloud systems.'
-)">
-View
-</button>
-
-<button onclick="bookSession('Priya Sharma')">
-Book Now
-</button>
-
+<div class="card-buttons">
+<button onclick="openPopup('Priya Sharma','Lead Backend Engineer','6 years experience','Node.js, AWS')">View</button>
+<button class="book-btn">Book Now</button>
 </div>
 
 </div>
-
 </div>
+
 
 </div>
 
 
+<!-- POPUP -->
 
-<div class="mentor-card">
+<div id="mentorPopup" class="popup">
 
-<img src="https://randomuser.me/api/portraits/men/54.jpg">
+<div class="popup-content">
 
-<div class="mentor-info">
+<span class="close" onclick="closePopup()">✖</span>
 
-<div class="mentor-top">
-<h3>Rohan Das</h3>
-<span class="rating">⭐ 4.8</span>
-</div>
+<h2 id="popupName"></h2>
 
-<p class="role">Growth Marketer</p>
-<p class="company">Zomato • 5+ years exp.</p>
+<p id="popupRole"></p>
 
-<div class="tags">
-<span>SEO</span>
-<span>Ads</span>
-</div>
+<p id="popupExp"></p>
 
-<div class="bottom">
+<p><b>Skills:</b> <span id="popupSkills"></span></p>
 
-<div>
-<p class="price">₹49</p>
-<p class="time">/ 30 min</p>
-</div>
-
-<div>
-
-<button onclick="viewProfile(
-'Rohan Das',
-'Growth Marketer',
-'Zomato • 5+ years exp.',
-'https://randomuser.me/api/portraits/men/54.jpg',
-'Growth marketing specialist helping startups scale user acquisition.'
-)">
-View
-</button>
-
-<button onclick="bookSession('Rohan Das')">
-Book Now
-</button>
-
-</div>
-
-</div>
+<button class="book-btn">Book Session</button>
 
 </div>
 
 </div>
 
 
-
-<div class="mentor-card">
-
-<img src="https://randomuser.me/api/portraits/women/68.jpg">
-
-<div class="mentor-info">
-
-<div class="mentor-top">
-<h3>Anjali Verma</h3>
-<span class="rating">⭐ 4.9</span>
-</div>
-
-<p class="role">Senior Product Manager</p>
-<p class="company">Amazon • 7+ years exp.</p>
-
-<div class="tags">
-<span>Agile</span>
-<span>Strategy</span>
-</div>
-
-<div class="bottom">
-
-<div>
-<p class="price">₹49</p>
-<p class="time">/ 30 min</p>
-</div>
-
-<div>
-
-<button onclick="viewProfile(
-'Anjali Verma',
-'Senior Product Manager',
-'Amazon • 7+ years exp.',
-'https://randomuser.me/api/portraits/women/68.jpg',
-'Product leader helping teams build impactful digital products.'
-)">
-View
-</button>
-
-<button onclick="bookSession('Anjali Verma')">
-Book Now
-</button>
-
-</div>
-
-</div>
-
-</div>
-
-</div>
-
-
-
-</div>
-
-
-
-<script>
-
-function viewProfile(name, role, exp, image, about){
-
-let mentor = {
-name:name,
-role:role,
-exp:exp,
-image:image,
-about:about
-}
-
-localStorage.setItem("mentorProfile", JSON.stringify(mentor))
-
-window.location.href = "mentor-profile.html"
-
-}
-
-
-function bookSession(name){
-
-localStorage.setItem("mentorName", name)
-
-window.location.href = "booking.html"
-
-}
-
-</script>
+<script src="js/mentors.js"></script>
 
 </body>
 </html>
