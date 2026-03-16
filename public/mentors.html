@@ -14,80 +14,17 @@
 <input id="searchInput" type="text" placeholder="Search by name, role, or skill">
 </div>
 
-<!-- FILTERS -->
-
 <div class="filters">
 <button onclick="filterMentors('all')">All Mentors</button>
 <button onclick="filterMentors('uiux')">UI/UX</button>
 <button onclick="filterMentors('backend')">Backend</button>
-<button onclick="filterMentors('product')">Product</button>
-<button onclick="filterMentors('growth')">Growth</button>
+<button onclick="filterMentors('frontend')">Frontend</button>
 </div>
 
 
-<div class="mentor-container" id="mentorList">
+<!-- JS mentors will load here -->
 
-<!-- Mentor 1 -->
-
-<div class="mentor-card" data-skill="uiux">
-
-<img class="mentor-img" src="https://randomuser.me/api/portraits/men/32.jpg">
-
-<div class="mentor-info">
-
-<div class="mentor-name">Arjun Mehta</div>
-<div class="rating">⭐ 4.9</div>
-
-<div class="mentor-role">Senior UI/UX Designer</div>
-<div class="mentor-company">Google • 8+ years exp.</div>
-
-<div class="tags">
-<span class="tag">Figma</span>
-<span class="tag">Prototyping</span>
-</div>
-
-<div class="price">₹49 / 30 min</div>
-
-<div class="card-buttons">
-<button onclick="openPopup('Arjun Mehta','Senior UI/UX Designer','8 years experience','Figma, Prototyping')">View</button>
-<button class="book-btn">Book Now</button>
-</div>
-
-</div>
-</div>
-
-
-<!-- Mentor 2 -->
-
-<div class="mentor-card" data-skill="backend">
-
-<img class="mentor-img" src="https://randomuser.me/api/portraits/women/45.jpg">
-
-<div class="mentor-info">
-
-<div class="mentor-name">Priya Sharma</div>
-<div class="rating">⭐ 5.0</div>
-
-<div class="mentor-role">Lead Backend Engineer</div>
-<div class="mentor-company">Microsoft • 6+ years exp.</div>
-
-<div class="tags">
-<span class="tag">Node.js</span>
-<span class="tag">AWS</span>
-</div>
-
-<div class="price">₹49 / 30 min</div>
-
-<div class="card-buttons">
-<button onclick="openPopup('Priya Sharma','Lead Backend Engineer','6 years experience','Node.js, AWS')">View</button>
-<button class="book-btn">Book Now</button>
-</div>
-
-</div>
-</div>
-
-
-</div>
+<div class="mentor-container" id="mentorGrid"></div>
 
 
 <!-- POPUP -->

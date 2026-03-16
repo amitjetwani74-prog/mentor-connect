@@ -1,4 +1,5 @@
 const mentors = [
+
 {
 name:"Rahul Sharma",
 skill:"frontend",
@@ -11,6 +12,7 @@ rating:"4.9",
 image:"https://randomuser.me/api/portraits/men/32.jpg",
 tags:["React","JavaScript"]
 },
+
 {
 name:"Sneha Kapoor",
 skill:"uiux",
@@ -23,6 +25,7 @@ rating:"5.0",
 image:"https://randomuser.me/api/portraits/women/45.jpg",
 tags:["Figma","Prototyping"]
 },
+
 {
 name:"Amit Patel",
 skill:"backend",
@@ -35,10 +38,12 @@ rating:"4.8",
 image:"https://randomuser.me/api/portraits/men/65.jpg",
 tags:["Node.js","AWS"]
 }
+
 ]
 
 
 const mentorGrid = document.getElementById("mentorGrid")
+
 
 function loadMentors(list){
 
@@ -48,7 +53,7 @@ list.forEach(m => {
 
 mentorGrid.innerHTML += `
 
-<div class="mentor-card" data-skill="${m.skill}">
+<div class="mentor-card">
 
 <img class="mentor-img" src="${m.image}">
 
@@ -99,22 +104,21 @@ loadMentors(mentors)
 
 /* BOOK SESSION */
 
-function bookSession(name, price30, price60){
+function bookSession(name,price30,price60){
 
-localStorage.setItem("mentorName", name)
-localStorage.setItem("price30", price30)
-localStorage.setItem("price60", price60)
+localStorage.setItem("mentorName",name)
+localStorage.setItem("price30",price30)
+localStorage.setItem("price60",price60)
 
-window.location.href = "booking.html"
+window.location.href="booking.html"
 
 }
+
 
 
 /* SEARCH */
 
 const searchInput = document.getElementById("searchInput")
-
-if(searchInput){
 
 searchInput.addEventListener("keyup",function(){
 
@@ -129,8 +133,6 @@ m.tags.join(" ").toLowerCase().includes(value)
 loadMentors(filtered)
 
 })
-
-}
 
 
 
