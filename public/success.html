@@ -2,34 +2,99 @@
 <html>
 <head>
 
-<title>Session Booked</title>
+<title>Booking Confirmed</title>
 <link rel="stylesheet" href="css/success.css">
 
 </head>
 
 <body>
 
-<div class="success-container">
+<div class="success-page">
 
-<div class="tick">✓</div>
+<div class="success-card">
 
-<h2>Session Booked Successfully</h2>
+<div class="icon">
+✔
+</div>
 
-<p>Your mentorship session has been confirmed.</p>
+<h2>Booking Confirmed!</h2>
 
-<p class="details">
-Mentor: Sneha Kapoor
+<p class="subtitle">
+Your mentorship session has been scheduled successfully.
 </p>
 
-<p class="details">
-Duration: 30 Minutes
+
+<div class="mentor-box">
+
+<p class="label">YOUR MENTOR</p>
+
+<h3 id="mentorName"></h3>
+
+<p class="role">Mentorship Session</p>
+
+
+<div class="details">
+
+<p>
+<strong>Date</strong><br>
+<span id="sessionDate"></span>
 </p>
 
-<a href="index.html" class="home-btn">
-Go to Home
-</a>
+<p>
+<strong>Time</strong><br>
+<span id="sessionTime"></span>
+</p>
 
 </div>
+
+
+<div class="meeting">
+
+<strong>Meeting Link</strong>
+
+<p>meet.google.com/mentor-session</p>
+
+</div>
+
+</div>
+
+
+<button class="calendar-btn">
+Add to Calendar
+</button>
+
+<button class="dashboard-btn">
+Go to Dashboard
+</button>
+
+
+<p class="support">
+Need help? <span>Contact Support</span>
+</p>
+
+
+</div>
+
+</div>
+
+
+
+<script>
+
+let mentor = localStorage.getItem("mentorName")
+let time = localStorage.getItem("time")
+
+let today = new Date()
+
+let date = today.toDateString()
+
+
+document.getElementById("mentorName").innerText = mentor
+document.getElementById("sessionDate").innerText = date
+document.getElementById("sessionTime").innerText = time
+
+</script>
+
 
 </body>
 </html>
