@@ -99,16 +99,15 @@ loadMentors(mentors)
 
 /* BOOK SESSION */
 
-function bookSession(name,price30,price60){
+function bookSession(name, price30, price60){
 
-localStorage.setItem("mentor",name)
-localStorage.setItem("price30",price30)
-localStorage.setItem("price60",price60)
+localStorage.setItem("mentorName", name)
+localStorage.setItem("price30", price30)
+localStorage.setItem("price60", price60)
 
-window.location.href="booking.html"
+window.location.href = "booking.html"
 
 }
-
 
 
 /* SEARCH */
