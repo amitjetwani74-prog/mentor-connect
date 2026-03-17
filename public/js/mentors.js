@@ -37,6 +37,97 @@ price60:89,
 rating:"4.8",
 image:"https://randomuser.me/api/portraits/men/65.jpg",
 tags:["Node.js","AWS"]
+},
+
+{
+name:"Rohan Verma",
+skill:"frontend",
+title:"React Developer",
+experience:"5 years",
+company:"Flipkart",
+price30:49,
+price60:89,
+rating:"4.7",
+image:"https://randomuser.me/api/portraits/men/22.jpg",
+tags:["React","Redux"]
+},
+
+{
+name:"Neha Gupta",
+skill:"uiux",
+title:"Product Designer",
+experience:"7 years",
+company:"Zomato",
+price30:49,
+price60:89,
+rating:"4.9",
+image:"https://randomuser.me/api/portraits/women/68.jpg",
+tags:["Figma","UX Research"]
+},
+
+{
+name:"Karan Singh",
+skill:"backend",
+title:"Node.js Developer",
+experience:"6 years",
+company:"Paytm",
+price30:49,
+price60:89,
+rating:"4.8",
+image:"https://randomuser.me/api/portraits/men/41.jpg",
+tags:["Node.js","MongoDB"]
+},
+
+{
+name:"Anjali Mehta",
+skill:"uiux",
+title:"UX Strategist",
+experience:"8 years",
+company:"Amazon",
+price30:49,
+price60:89,
+rating:"5.0",
+image:"https://randomuser.me/api/portraits/women/12.jpg",
+tags:["Design Systems","Research"]
+},
+
+{
+name:"Vikram Joshi",
+skill:"backend",
+title:"System Engineer",
+experience:"9 years",
+company:"Infosys",
+price30:49,
+price60:89,
+rating:"4.6",
+image:"https://randomuser.me/api/portraits/men/55.jpg",
+tags:["Java","Spring"]
+},
+
+{
+name:"Simran Kaur",
+skill:"frontend",
+title:"Frontend Engineer",
+experience:"5 years",
+company:"Swiggy",
+price30:49,
+price60:89,
+rating:"4.8",
+image:"https://randomuser.me/api/portraits/women/33.jpg",
+tags:["HTML","CSS","JS"]
+},
+
+{
+name:"Aditya Rao",
+skill:"backend",
+title:"Cloud Engineer",
+experience:"7 years",
+company:"AWS",
+price30:49,
+price60:89,
+rating:"4.9",
+image:"https://randomuser.me/api/portraits/men/75.jpg",
+tags:["AWS","Docker"]
 }
 
 ]
@@ -77,11 +168,11 @@ ${m.tags.map(t=>`<span class="tag">${t}</span>`).join("")}
 
 <div class="card-buttons">
 
-<button onclick="openPopup('${m.name}','${m.title}','${m.experience}','${m.tags.join(",")}')">
+<button class="view-btn" onclick="openPopup('${m.name}','${m.title}','${m.experience}','${m.tags.join(",")}')">
 View
 </button>
 
-<button onclick="bookSession('${m.name}',${m.price30},${m.price60})">
+<button class="book-btn" onclick="bookSession('${m.name}',${m.price30},${m.price60})">
 Book Now
 </button>
 
