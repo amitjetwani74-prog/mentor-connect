@@ -20,7 +20,11 @@ MentorConnect
 <a href="#">How it Works</a>
 <a href="#">Resources</a>
 <a class="btn-primary" href="signup.html">Get Started</a>
+
+<button onclick="logout()" class="logout-btn">Logout</button>
+
 </div>
+
 
 </nav>
 
@@ -161,6 +165,40 @@ Connect with industry experts from top tech companies for
 </div>
 
 </footer>
+
+<script>
+
+function logout(){
+
+localStorage.removeItem("isLoggedIn");
+localStorage.removeItem("userName");
+localStorage.removeItem("userEmail");
+
+/* redirect to login */
+
+window.location.href = "login.html";
+
+}
+
+</script>
+
+<script>
+
+if(localStorage.getItem("isLoggedIn") !== "true"){
+document.querySelector(".logout-btn").style.display = "none";
+}
+
+</script>
+
+<script>
+
+if(localStorage.getItem("isLoggedIn") === "true"){
+document.querySelector(".btn-primary").innerText = "Dashboard";
+document.querySelector(".btn-primary").href = "mentors.html";
+}
+
+</script>
+
 
 </body>
 </html>

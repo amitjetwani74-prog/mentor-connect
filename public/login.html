@@ -48,23 +48,13 @@ LinkedIn
 <span>OR CONTINUE WITH EMAIL</span>
 </div>
 
+<input id="loginEmail" type="email" placeholder="Enter your email">
+<input id="loginPassword" type="password" placeholder="Enter your password">
 
-<input type="email" placeholder="Email Address">
-
-<div class="password-box">
-<input type="password" placeholder="Password">
-<a class="forgot">Forgot Password?</a>
-</div>
-
-
-<button class="login-btn">
-Login
-</button>
-
+<button class="login-btn" onclick="loginUser()">Login →</button>
 
 <p class="signup-link">
-Don't have an account?
-<a href="signup.html">Sign up</a>
+Don’t have an account? <a href="signup.html">Sign up</a>
 </p>
 
 </div>
@@ -79,6 +69,47 @@ Don't have an account?
 </div>
 
 </div>
+
+<script>
+
+function loginUser(){
+
+let email = document.getElementById("loginEmail").value;
+let password = document.getElementById("loginPassword").value;
+
+/* validation */
+
+if(email==="" || password===""){
+alert("Please fill all fields");
+return;
+}
+
+/* get stored user */
+
+let storedEmail = localStorage.getItem("userEmail");
+
+if(email !== storedEmail){
+alert("User not found. Please signup first.");
+return;
+}
+
+/* login success */
+
+localStorage.setItem("isLoggedIn", "true");
+
+/* redirect */
+
+let type = localStorage.getItem("userType") || "mentee";
+
+if(type==="mentor"){
+window.location.href = "mentor-dashboard.html";
+}else{
+window.location.href = "mentors.html";
+}
+
+}
+
+</script>
 
 </body>
 </html>

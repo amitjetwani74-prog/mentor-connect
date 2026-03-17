@@ -114,6 +114,20 @@ background:#312e81;
 color:white;
 }
 
+.logout-btn{
+background:#ef4444;
+color:white;
+border:none;
+padding:8px 16px;
+border-radius:8px;
+cursor:pointer;
+transition:0.3s;
+}
+
+.logout-btn:hover{
+background:#dc2626;
+}
+
 
 /* HERO IMAGE */
 
@@ -295,3 +309,4 @@ z-index:-1;
 0%{transform:translateY(0px) translateX(0px);}
 100%{transform:translateY(40px) translateX(-30px);}
 }
+
