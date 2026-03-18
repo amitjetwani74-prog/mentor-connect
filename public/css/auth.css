@@ -205,4 +205,31 @@ font-size:12px;
 color:white;
 text-align:center;
 }
+/* FIX CLICK ISSUE */
+/* ===== FORCE FIX CLICK ISSUE ===== */
 
+body{
+position:relative;
+}
+
+.login-page{
+position:relative;
+z-index:10;
+}
+
+.login-card{
+position:relative;
+z-index:20;
+}
+
+.login-btn{
+position:relative;
+z-index:30;
+cursor:pointer;
+}
+
+/* remove any invisible blocking layer */
+*::before,
+*::after{
+pointer-events:none !important;
+}

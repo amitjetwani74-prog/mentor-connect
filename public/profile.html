@@ -2,31 +2,89 @@
 <html>
 
 <head>
-<title>Profile</title>
-<link rel="stylesheet" href="css/style.css">
+<title>Profile - MentorConnect</title>
+<link rel="stylesheet" href="css/profile.css">
 </head>
 
 <body>
 
-<div class="profile">
+<div class="profile-container">
 
-<h1>Welcome</h1>
+<img src="https://randomuser.me/api/portraits/men/32.jpg" class="profile-img">
 
-<p id="username"></p>
+<h2 id="userName"></h2>
+<p id="userEmail"></p>
+<p class="role" id="userRole"></p>
 
-<a href="mentors.html">Explore Mentors</a>
+<div class="stats">
+<div>
+<h3>12</h3>
+<p>Sessions</p>
+</div>
+<div>
+<h3>4.8</h3>
+<p>Rating</p>
+</div>
+</div>
+
+<div class="about">
+<h3>About</h3>
+<p>This is your personal profile. You can explore mentors and grow your career.</p>
+</div>
+
+<div class="actions">
+
+<button onclick="goToMentors()">Explore Mentors</button>
+
+<button onclick="logout()" class="logout-btn">
+Logout
+</button>
 
 </div>
 
+</div>
+
+
 <script>
 
-const user = JSON.parse(localStorage.getItem("user"))
+/* GET USER DATA */
 
-if(!user){
-window.location.href="login.html"
+let name = localStorage.getItem("userName");
+let email = localStorage.getItem("userEmail");
+let role = localStorage.getItem("userType");
+
+/* PROTECT PAGE */
+
+if(!name){
+window.location.href = "login.html";
 }
 
-document.getElementById("username").innerText=user.name
+/* DEFAULT FALLBACKS */
+
+if(!email){
+email = "Not provided";
+}
+
+if(!role){
+role = "mentee";
+}
+
+/* SHOW DATA */
+
+document.getElementById("userName").innerText = "Hi, " + name;
+document.getElementById("userEmail").innerText = email;
+document.getElementById("userRole").innerText = "Role: " + role;
+
+/* FUNCTIONS */
+
+function goToMentors(){
+window.location.href = "mentors.html";
+}
+
+function logout(){
+localStorage.clear();
+window.location.href = "login.html";
+}
 
 </script>
 

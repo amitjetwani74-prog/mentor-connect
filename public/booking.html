@@ -1,84 +1,88 @@
 <!DOCTYPE html>
 <html>
 <head>
-
 <title>Book a Session</title>
 <link rel="stylesheet" href="css/booking.css">
-
 </head>
 
 <body>
 
 <div class="booking-page">
 
-<h2>Book a Session</h2>
+  <!-- LEFT PANEL -->
+  <div class="left-panel">
 
-<p class="mentor-name" id="mentorName"></p>
+    <h2>Book a Session</h2>
+    <p class="mentor-name" id="mentorName"></p>
 
-<div class="card">
+    <div class="info-box">
+      <div class="info-item">
+        <h4>Flexible Scheduling</h4>
+        <p>Pick a time that works best for you.</p>
+      </div>
 
-<h3>1. Select Duration</h3>
+      <div class="info-item">
+        <h4>Expert Guidance</h4>
+        <p>Get personalized feedback and advice.</p>
+      </div>
+    </div>
 
-<div class="duration active" onclick="selectDuration('30 Minutes',49,this)">
-<strong>30 Minutes</strong>
-<p>₹49 - Quick consultation</p>
+  </div>
+
+  <!-- RIGHT PANEL -->
+  <div class="right-panel">
+
+    <div class="card">
+      <h3>1. Select Duration</h3>
+
+      <div class="duration-container">
+        <div class="duration active" onclick="selectDuration('30 Minutes',49,this)">
+          <strong>30 Minutes</strong>
+          <p>₹49</p>
+        </div>
+
+        <div class="duration" onclick="selectDuration('1 Hour',89,this)">
+          <strong>1 Hour</strong>
+          <p>₹89</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <h3>2. Select Time</h3>
+
+      <div class="time-grid">
+        <div class="time-slot">10:00 AM</div>
+        <div class="time-slot">11:00 AM</div>
+        <div class="time-slot">12:00 PM</div>
+        <div class="time-slot">2:00 PM</div>
+        <div class="time-slot">4:00 PM</div>
+        <div class="time-slot">6:00 PM</div>
+      </div>
+    </div>
+
+    <div class="card">
+      <h3>3. Message</h3>
+      <textarea placeholder="Tell mentor what you want help with"></textarea>
+    </div>
+
+    <div class="summary">
+      <h3>Session Summary</h3>
+
+      <p>Mentor: <span id="summaryMentor"></span></p>
+      <p>Duration: <span id="summaryDuration">30 Minutes</span></p>
+      <p>Time: <span id="selectedTime">Not selected</span></p>
+
+      <div class="price-box">
+        Total: ₹<span id="summaryPrice">49</span>
+      </div>
+
+      <button onclick="goToPayment()">Confirm & Pay</button>
+    </div>
+
+  </div>
+
 </div>
-
-<div class="duration" onclick="selectDuration('1 Hour',89,this)">
-<strong>1 Hour</strong>
-<p>₹89 - Deep dive session</p>
-</div>
-
-</div>
-
-
-<div class="card">
-
-<h3>2. Select Time</h3>
-
-<div class="time-grid">
-
-<button onclick="selectTime('09:00 AM')">09:00 AM</button>
-<button onclick="selectTime('10:30 AM')">10:30 AM</button>
-<button onclick="selectTime('11:00 AM')">11:00 AM</button>
-<button onclick="selectTime('02:00 PM')">02:00 PM</button>
-<button onclick="selectTime('04:30 PM')">04:30 PM</button>
-
-</div>
-
-</div>
-
-
-<div class="card">
-
-<h3>3. Message (optional)</h3>
-
-<textarea placeholder="Tell mentor what you want help with"></textarea>
-
-</div>
-
-
-<div class="summary">
-
-<h3>Session Summary</h3>
-
-<p>Mentor: <span id="summaryMentor"></span></p>
-<p>Duration: <span id="summaryDuration">30 Minutes</span></p>
-<p>Time: <span id="summaryTime">Not selected</span></p>
-
-<div class="price-box">
-Total: ₹<span id="summaryPrice">49</span>
-</div>
-
-<button onclick="goToPayment()">
-Confirm & Pay
-</button>
-
-</div>
-
-
-</div>
-
 
 <script>
 
@@ -87,51 +91,46 @@ let mentor = localStorage.getItem("mentorName")
 document.getElementById("mentorName").innerText = "Mentor: " + mentor
 document.getElementById("summaryMentor").innerText = mentor
 
-
 let duration = "30 Minutes"
 let price = 49
 let time = ""
 
-
 function selectDuration(d,p,el){
+  duration = d
+  price = p
 
-duration = d
-price = p
+  document.querySelectorAll(".duration").forEach(d=>{
+    d.classList.remove("active")
+  })
 
-document.querySelectorAll(".duration").forEach(d=>{
-d.classList.remove("active")
-})
+  el.classList.add("active")
 
-el.classList.add("active")
-
-document.getElementById("summaryDuration").innerText = duration
-document.getElementById("summaryPrice").innerText = price
-
+  document.getElementById("summaryDuration").innerText = duration
+  document.getElementById("summaryPrice").innerText = price
 }
 
+let selectedTime = null;
 
-function selectTime(t){
-
-time = t
-
-document.getElementById("summaryTime").innerText = t
-
-}
-
+document.querySelectorAll(".time-slot").forEach(slot=>{
+  slot.addEventListener("click",function(){
+    document.querySelectorAll(".time-slot").forEach(s=>s.classList.remove("active"));
+    this.classList.add("active");
+    selectedTime = this.innerText;
+    time = selectedTime;   // 🔥 FIX
+    document.querySelector("#selectedTime").innerText = selectedTime;
+  });
+});
 
 function goToPayment(){
+  localStorage.setItem("mentorName", mentor)
+  localStorage.setItem("duration", duration)
+  localStorage.setItem("price", price)
+  localStorage.setItem("time", time)
 
-localStorage.setItem("mentorName", mentor)
-localStorage.setItem("duration", duration)
-localStorage.setItem("price", price)
-localStorage.setItem("time", time)
-
-window.location.href="payment.html"
-
+  window.location.href="payment.html"
 }
 
 </script>
-
 
 </body>
 </html>

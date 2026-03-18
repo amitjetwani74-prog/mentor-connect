@@ -12,14 +12,15 @@
 <nav class="navbar">
 
 <div class="logo">
-MentorConnect
+  <img src="images/logo.png" alt="logo">
+  <span>MentorConnect</span>
 </div>
 
 <div class="nav-links">
 <a href="mentors.html">Find Mentors</a>
-<a href="#">How it Works</a>
 <a href="#">Resources</a>
 <a class="btn-primary" href="signup.html">Get Started</a>
+<a href="profile.html" id="userNameDisplay" class="profile-link"></a>
 
 <button onclick="logout()" class="logout-btn">Logout</button>
 
@@ -53,7 +54,7 @@ Connect with industry experts from top tech companies for
 <div class="hero-buttons">
 
 <a href="mentors.html" class="btn-main">Explore Mentors →</a>
-<a href="#" class="btn-secondary">How it works</a>
+<a href="#howItWorks" class="btn-secondary">How it works</a>
 
 </div>
 
@@ -69,6 +70,44 @@ Connect with industry experts from top tech companies for
 </div>
 
 </div>
+
+</section>
+
+<section id="howItWorks" class="how-section">
+
+  <h2>What is MentorConnect?</h2>
+
+  <p class="about-text">
+    MentorConnect is a platform where you can connect with experienced professionals
+    from top companies to guide your career. Whether you need help with interviews,
+    skills, or career direction — mentors are here to help you grow faster.
+  </p>
+
+  <h2>How it works</h2>
+
+  <div class="steps">
+
+    <div class="step">
+      <h3>1. Explore Mentors</h3>
+      <p>Browse mentors based on skills, companies and experience.</p>
+    </div>
+
+    <div class="step">
+      <h3>2. Book a Session</h3>
+      <p>Select a mentor and choose a time slot that works for you.</p>
+    </div>
+
+    <div class="step">
+      <h3>3. Make Payment</h3>
+      <p>Securely pay and confirm your session instantly.</p>
+    </div>
+
+    <div class="step">
+      <h3>4. Get Guidance</h3>
+      <p>Attend your session and get expert career advice.</p>
+    </div>
+
+  </div>
 
 </section>
 
@@ -99,34 +138,6 @@ Connect with industry experts from top tech companies for
 <img src="https://upload.wikimedia.org/wikipedia/commons/f/fa/Apple_logo_black.svg">
 
 </div>
-</div>
-
-</section>
-
-
-<!-- HOW IT WORKS -->
-
-<section class="how">
-
-<h2>How it works</h2>
-
-<div class="steps">
-
-<div class="step">
-<h3>Find your mentor</h3>
-<p>Browse through experts by skill, company and industry.</p>
-</div>
-
-<div class="step">
-<h3>Book a session</h3>
-<p>Choose a time that works for you and book instantly.</p>
-</div>
-
-<div class="step">
-<h3>Level up</h3>
-<p>Get guidance and accelerate your career growth.</p>
-</div>
-
 </div>
 
 </section>
@@ -165,40 +176,44 @@ Connect with industry experts from top tech companies for
 </div>
 
 </footer>
-
 <script>
 
-function logout(){
+/* LOGOUT FUNCTION */
 
+function logout(){
 localStorage.removeItem("isLoggedIn");
 localStorage.removeItem("userName");
 localStorage.removeItem("userEmail");
 
-/* redirect to login */
-
 window.location.href = "login.html";
-
 }
 
-</script>
 
-<script>
+/* PAGE LOAD LOGIC */
 
-if(localStorage.getItem("isLoggedIn") !== "true"){
+let isLoggedIn = localStorage.getItem("isLoggedIn");
+let user = localStorage.getItem("userName");
+
+/* hide logout if not logged in */
+
+if(isLoggedIn !== "true"){
 document.querySelector(".logout-btn").style.display = "none";
 }
 
-</script>
+/* change button if logged in */
 
-<script>
-
-if(localStorage.getItem("isLoggedIn") === "true"){
+if(isLoggedIn === "true"){
 document.querySelector(".btn-primary").innerText = "Dashboard";
 document.querySelector(".btn-primary").href = "mentors.html";
 }
 
-</script>
+/* show user name */
 
+if(user){
+document.getElementById("userNameDisplay").innerText = "Hi, " + user;
+}
+
+</script>
 
 </body>
 </html>

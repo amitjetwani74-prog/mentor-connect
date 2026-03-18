@@ -66,9 +66,10 @@
 </div>
 
 
-<button class="login-btn" onclick="createAccount()">
+<button type="button" class="login-btn" onclick="createAccount()">
 Create Account →
 </button>
+
 
 <p class="signup-link">
 Already have an account? <a href="login.html">Log in</a>
@@ -104,15 +105,11 @@ Facebook
 
 
 <!-- JS -->
-
 <script>
 
 let selectedType = "mentee";
 
-/* TYPE SELECT */
-
 function selectType(el,type){
-
 selectedType = type;
 
 document.querySelectorAll(".type").forEach(t=>{
@@ -122,61 +119,40 @@ t.classList.remove("active");
 el.classList.add("active");
 
 localStorage.setItem("userType", type);
-
 }
 
 
-/* CREATE ACCOUNT */
-
 function createAccount(){
 
-let name = document.getElementById("name").value;
-let email = document.getElementById("email").value;
-let password = document.getElementById("password").value;
-let confirmPassword = document.getElementById("confirmPassword").value;
-let terms = document.getElementById("terms").checked;
-
-/* validation */
+let name = document.querySelector('input[placeholder="John Doe"]').value;
+let email = document.querySelector('input[placeholder="example@email.com"]').value;
+let password = document.querySelectorAll('input[type="password"]')[0].value;
 
 if(name==="" || email==="" || password===""){
 alert("Please fill all fields");
 return;
 }
 
-if(password !== confirmPassword){
-alert("Passwords do not match");
-return;
-}
-
-if(!terms){
-alert("Please accept Terms & Privacy Policy");
-return;
-}
-
-/* store */
-
 localStorage.setItem("userName", name);
 localStorage.setItem("userEmail", email);
 
-/* redirect */
+/* 🔥 IMPORTANT */
+localStorage.setItem("isLoggedIn","true");
 
-let type = localStorage.getItem("userType") || "mentee";
+let type = localStorage.getItem("userType");
 
-if(type==="mentor"){
-window.location.href = "mentor-dashboard.html";
-}else{
-window.location.href = "mentors.html";
-}
+window.location.href = "index.html";
 
 }
 
-
-/* SOCIAL LOGIN */
 
 function socialLogin(type){
 
 localStorage.setItem("userName", type + " User");
 localStorage.setItem("userEmail", type + "@demo.com");
+
+/* 🔥 IMPORTANT */
+localStorage.setItem("isLoggedIn","true");
 
 let userType = localStorage.getItem("userType") || "mentee";
 
@@ -189,6 +165,5 @@ window.location.href = "mentors.html";
 }
 
 </script>
-
 </body>
 </html>

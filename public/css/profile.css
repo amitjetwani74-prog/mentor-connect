@@ -1,14 +1,19 @@
 body{
 font-family:Arial;
-background:#f4f6fb;
+background:linear-gradient(135deg,#1e1b4b,#312e81);
 margin:0;
+color:white;
 }
 
 .profile-container{
 max-width:420px;
-margin:auto;
+margin:80px auto;
 padding:30px;
 text-align:center;
+background:rgba(255,255,255,0.08);
+border-radius:16px;
+backdrop-filter:blur(15px);
+box-shadow:0 20px 40px rgba(0,0,0,0.4);
 }
 
 .profile-img{
@@ -16,16 +21,14 @@ width:120px;
 height:120px;
 border-radius:50%;
 object-fit:cover;
-margin-bottom:10px;
+margin-bottom:15px;
+border:3px solid #6366f1;
 }
 
 .role{
-color:#5b5bf7;
+color:#a5b4fc;
 font-weight:bold;
-}
-
-.exp{
-color:#777;
+margin-top:5px;
 }
 
 .stats{
@@ -35,7 +38,7 @@ margin:25px 0;
 }
 
 .stats div{
-background:white;
+background:rgba(255,255,255,0.1);
 padding:15px;
 border-radius:12px;
 flex:1;
@@ -45,6 +48,7 @@ margin:5px;
 .about{
 text-align:left;
 margin-top:20px;
+color:#ddd;
 }
 
 .actions{
@@ -52,7 +56,7 @@ margin-top:30px;
 }
 
 button{
-background:#5b5bf7;
+background:#6366f1;
 color:white;
 border:none;
 padding:14px 20px;
@@ -60,4 +64,9 @@ border-radius:10px;
 cursor:pointer;
 width:100%;
 font-size:16px;
+transition:0.3s;
+}
+
+button:hover{
+transform:scale(1.05);
 }
