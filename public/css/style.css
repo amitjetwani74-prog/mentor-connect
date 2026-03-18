@@ -7,11 +7,48 @@ color:white;
 
 /* NAVBAR */
 
+.dropdown{
+  position:relative;
+  display:inline-block;  
+}
+
+.dropbtn{
+  color:white;
+  cursor:pointer;
+}
+
+.dropdown-content{
+  display:none;
+  position:absolute;
+  top:35px;
+  background:#1e1b4b;
+  min-width:220px;
+  border-radius:10px;
+  overflow:hidden;
+  box-shadow:0 10px 25px rgba(0,0,0,0.3);
+}
+
+.dropdown-content a{
+  display:block;
+  padding:12px;
+  color:white;
+  text-decoration:none;
+  font-size:14px;
+}
+
+.dropdown-content a:hover{
+  background:#6366f1;
+}
+
+.dropdown:hover .dropdown-content{
+  display:block;
+}
+
 .navbar{
   display:flex;
   justify-content:space-between;
   align-items:center;
-  padding:12px 30px;   /* 🔥 yahi main fix hai */
+  padding:12px 30px;
   background:#1e1b4b;
   border-bottom:1px solid rgba(255,255,255,0.1);
   position:sticky;
@@ -23,24 +60,30 @@ color:white;
 .logo {
   display: flex;
   align-items: center;
-  gap: 10px;   /* pehle 10 tha → thoda tight kiya */
+  gap: 10px;
   font-size: 24px;
   font-weight: 700;
   color: #6366f1;
 }
 
 .logo img {
-  height: 60px;   /* perfect balance */
+  height: 60px;
   width: auto;
   display: block;
 }
 
 .mentor{
-  color:#6366f1;  /* purple */
+  color:#6366f1;
 }
 
 .connect{
-  color:#22c55e;  /* green 🔥 */
+  color:#22c55e;
+}
+
+.nav-links{
+  display:flex;
+  align-items:center;
+  gap:25px;
 }
 
 .nav-links a{
@@ -57,7 +100,6 @@ border-radius:20px;
 color:white;
 text-decoration:none;
 }
-
 
 /* HERO */
 
@@ -145,7 +187,6 @@ transition:0.3s;
 background:#dc2626;
 }
 
-
 /* HERO IMAGE */
 
 .hero-card img{
@@ -153,7 +194,6 @@ width:420px;
 border-radius:15px;
 box-shadow:0 20px 40px rgba(0,0,0,0.4);
 }
-
 
 .how-section{
   padding:80px 60px;
@@ -256,7 +296,6 @@ transform:translateY(-6px);
 box-shadow:0 15px 30px rgba(0,0,0,0.4);
 }
 
-
 /* FOOTER */
 
 footer{
@@ -285,7 +324,6 @@ background:#312e81;
 color:white;
 }
 
-
 @media(max-width:900px){
 
 .hero{
@@ -304,7 +342,6 @@ flex-direction:column;
 
 }
 
-
 /* HERO ANIMATED BACKGROUND */
 
 .hero{
@@ -318,8 +355,6 @@ position:relative;
 z-index:2;
 }
 
-/* moving gradient */
-
 .hero-bg{
 position:absolute;
 width:200%;
@@ -331,8 +366,6 @@ background-size:400% 400%;
 animation:gradientMove 12s ease infinite;
 z-index:-2;
 }
-
-/* glow blobs */
 
 .hero-glow{
 position:absolute;
@@ -375,4 +408,3 @@ color:#fff;
 0%{transform:translateY(0px) translateX(0px);}
 100%{transform:translateY(40px) translateX(-30px);}
 }
-

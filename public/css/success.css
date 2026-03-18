@@ -1,12 +1,17 @@
 body{
 font-family:Arial;
 margin:0;
-background:linear-gradient(135deg,#4f46e5,#6366f1);
+
+/* 🔥 deep violet premium background */
+background:#0f0c29;
+
 display:flex;
 justify-content:center;
 align-items:center;
-height:100vh;
+min-height:100vh;
 }
+
+/* NAV BUTTONS */
 
 .nav-controls{
   position:fixed;
@@ -35,36 +40,53 @@ height:100vh;
   transform:scale(1.1);
 }
 
+/* MAIN CONTAINER (🔥 BIG CARD FIX) */
+
 .success-page{
-width:420px;
+width:90%;
+max-width:900px;
+height:85vh;
+display:flex;
+justify-content:center;
+align-items:center;
 }
+
+/* CARD */
 
 .success-card{
 background:white;
-padding:30px;
+padding:40px;
 border-radius:20px;
-box-shadow:0 10px 30px rgba(0,0,0,0.2);
+box-shadow:0 30px 60px rgba(0,0,0,0.4);
 text-align:center;
+width:100%;
+max-width:500px;
 }
 
+/* ICON */
+
 .icon{
-width:70px;
-height:70px;
-background:#4f46e5;
+width:80px;
+height:80px;
+background:linear-gradient(135deg,#6366f1,#8b5cf6);
 color:white;
 display:flex;
 align-items:center;
 justify-content:center;
 border-radius:50%;
-font-size:30px;
+font-size:34px;
 margin:auto;
-margin-bottom:15px;
+margin-bottom:20px;
 }
+
+/* TEXT */
 
 .subtitle{
 color:#777;
 margin-bottom:25px;
 }
+
+/* INFO BOX */
 
 .mentor-box{
 background:#f6f7fb;
@@ -98,15 +120,24 @@ border-radius:10px;
 font-size:13px;
 }
 
+/* BUTTONS */
+
 .calendar-btn{
 width:100%;
 padding:14px;
 border:none;
-background:#4f46e5;
+background:linear-gradient(90deg,#6366f1,#8b5cf6);
 color:white;
 border-radius:25px;
 margin-bottom:10px;
 cursor:pointer;
+font-weight:600;
+transition:0.3s;
+}
+
+.calendar-btn:hover{
+transform:scale(1.03);
+box-shadow:0 10px 20px rgba(99,102,241,0.4);
 }
 
 .dashboard-btn{
@@ -116,7 +147,14 @@ border:none;
 background:#e5e7eb;
 border-radius:25px;
 cursor:pointer;
+transition:0.3s;
 }
+
+.dashboard-btn:hover{
+background:#d1d5db;
+}
+
+/* SUPPORT */
 
 .support{
 margin-top:15px;
