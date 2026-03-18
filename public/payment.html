@@ -1,115 +1,103 @@
 <!DOCTYPE html>
 <html>
 <head>
-
 <title>Checkout</title>
-<link rel="stylesheet" href="css/payment.css">
-
+<link rel="stylesheet" href="./css/payment.css">
 </head>
 
 <body>
 
 <div class="checkout-page">
 
-<h2>Checkout</h2>
+  <!-- LEFT PANEL -->
+  <div class="left-panel">
 
+    <h2>Checkout</h2>
 
-<div class="summary-card">
+    <div class="secure-box">
+      <p>🔒 100% Secure Payment</p>
+      <p>All transactions are encrypted and protected.</p>
+      <p>Trusted by 500+ users</p>
+    </div>
 
-<div class="mentor-info">
+  </div>
 
-<img src="https://randomuser.me/api/portraits/women/44.jpg">
+  <!-- RIGHT PANEL -->
+  <div class="right-panel">
 
-<div>
+    <div class="summary-card">
 
-<h3 id="mentorName"></h3>
+      <div class="mentor-info">
+        <img src="https://randomuser.me/api/portraits/women/44.jpg">
 
-<p id="sessionTime"></p>
-<p id="sessionDuration"></p>
+        <div>
+          <h3 id="mentorName"></h3>
+          <p id="sessionTime"></p>
+          <p id="sessionDuration"></p>
+        </div>
+      </div>
 
-</div>
+      <hr>
 
-</div>
+      <div class="price-row">
+        <span>Session Fee</span>
+        <span>₹<span id="sessionPrice"></span></span>
+      </div>
 
+      <div class="price-row">
+        <span>Service Fee</span>
+        <span>₹5</span>
+      </div>
 
-<hr>
+      <div class="total-row">
+        <span>Total Amount</span>
+        <span>₹<span id="totalPrice"></span></span>
+      </div>
 
+    </div>
 
-<div class="price-row">
-<span>Session Fee</span>
-<span>₹<span id="sessionPrice"></span></span>
-</div>
+    <h3>Payment Method</h3>
 
-<div class="price-row">
-<span>Service Fee</span>
-<span>₹5</span>
-</div>
+    <!-- OPTION 1 -->
+    <div class="payment-option active">
+      <div>
+        <strong>UPI Payment</strong>
+        <p>Google Pay, PhonePe, Paytm</p>
+      </div>
+      <input type="radio" checked>
+    </div>
 
+    <!-- OPTION 2 -->
+    <div class="payment-option">
+      <div>
+        <strong>Credit / Debit Card</strong>
+        <p>Visa, Mastercard, RuPay</p>
+      </div>
+      <input type="radio">
+    </div>
 
-<div class="total-row">
-<span>Total Amount</span>
-<span>₹<span id="totalPrice"></span></span>
-</div>
+    <!-- OPTION 3 -->
+    <div class="payment-option">
+      <div>
+        <strong>Net Banking</strong>
+        <p>Secure login to your bank</p>
+      </div>
+      <input type="radio">
+    </div>
 
-</div>
+    <button class="pay-btn" onclick="payNow()">
+      Pay ₹<span id="payButtonPrice"></span> Now →
+    </button>
 
+    <p class="secure">Safe & Secure Environment</p>
 
-
-<h3>Payment Method</h3>
-
-
-<div class="payment-option active">
-
-<div>
-<strong>UPI Payment</strong>
-<p>Google Pay, PhonePe, Paytm</p>
-</div>
-
-<input type="radio" checked>
-
-</div>
-
-
-<div class="payment-option">
-
-<div>
-<strong>Credit / Debit Card</strong>
-<p>Visa, Mastercard, RuPay</p>
-</div>
-
-<input type="radio">
-
-</div>
-
-
-<div class="payment-option">
-
-<div>
-<strong>Net Banking</strong>
-<p>Secure login to your bank</p>
-</div>
-
-<input type="radio">
-
-</div>
-
-
-
-<button class="pay-btn" onclick="payNow()">
-Pay ₹<span id="payButtonPrice"></span> Now →
-</button>
-
-
-<p class="secure">
-Safe & Secure Environment
-</p>
-
+  </div>
 
 </div>
-
-
 
 <script>
+
+// 🔥 GET DATA FROM BOOKING PAGE
 
 let mentor = localStorage.getItem("mentorName")
 let duration = localStorage.getItem("duration")
@@ -118,6 +106,7 @@ let price = Number(localStorage.getItem("price"))
 let serviceFee = 5
 let total = price + serviceFee
 
+// 🔥 SET DATA
 
 document.getElementById("mentorName").innerText = mentor
 document.getElementById("sessionDuration").innerText = duration
@@ -126,15 +115,29 @@ document.getElementById("sessionPrice").innerText = price
 document.getElementById("totalPrice").innerText = total
 document.getElementById("payButtonPrice").innerText = total
 
+// 🔥 PAYMENT BUTTON
 
 function payNow(){
-
-window.location.href = "success.html"
-
+  window.location.href = "success.html"
 }
 
-</script>
+// 🔥 PAYMENT OPTION CLICK
 
+document.querySelectorAll(".payment-option").forEach(option=>{
+  option.addEventListener("click",function(){
+
+    document.querySelectorAll(".payment-option").forEach(o=>{
+      o.classList.remove("active")
+      o.querySelector("input").checked = false
+    })
+
+    this.classList.add("active")
+    this.querySelector("input").checked = true
+
+  })
+})
+
+</script>
 
 </body>
 </html>
