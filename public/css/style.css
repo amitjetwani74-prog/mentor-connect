@@ -35,6 +35,14 @@ color:white;
   display: block;
 }
 
+.mentor{
+  color:#6366f1;  /* purple */
+}
+
+.connect{
+  color:#22c55e;  /* green 🔥 */
+}
+
 .nav-links a{
 margin-left:25px;
 text-decoration:none;

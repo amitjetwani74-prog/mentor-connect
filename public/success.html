@@ -9,6 +9,11 @@
 
 <body>
 
+<div class="nav-controls">
+  <button onclick="goBack()">←</button>
+  <button onclick="goHome()">🏠</button>
+</div>
+
 <div class="success-page">
 
 <div class="success-card">
@@ -81,6 +86,15 @@ Need help? <span>Contact Support</span>
 
 
 <script>
+
+
+function goBack(){
+  window.history.back();
+}
+
+function goHome(){
+  window.location.href = "index.html";
+}
 
 let mentor = localStorage.getItem("mentorName")
 let time = localStorage.getItem("time")

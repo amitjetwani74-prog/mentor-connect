@@ -8,6 +8,11 @@
 
 <body>
 
+<div class="nav-controls">
+  <button onclick="goBack()">←</button>
+  <button onclick="goHome()">🏠</button>
+</div>
+
 <h1 class="page-title">Explore Mentors</h1>
 
 <div class="search-bar">
@@ -50,6 +55,16 @@
 
 
 <script src="js/mentors.js"></script>
+
+<script>
+function goBack(){
+  window.history.back();
+}
+
+function goHome(){
+  window.location.href = "index.html";
+}
+</script>
 
 </body>
 </html>
