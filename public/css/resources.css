@@ -1,10 +1,14 @@
 body{
+  padding-top:80px;
   font-family:Arial;
   margin:0;
-  padding:40px;
+  padding: 40px;
   background:linear-gradient(135deg,#0f0c29,#302b63,#24243e);
   color:white;
+  overflow-x:hidden;
 }
+
+
 
 /* NAV BUTTONS */
 
@@ -14,9 +18,12 @@ body{
   left:20px;
   display:flex;
   gap:10px;
+  z-index:99999; 
+  pointer-events:auto;
 }
 
 .nav-controls button{
+  
   width:45px;
   height:45px;
   border:none;
@@ -24,12 +31,30 @@ body{
   background:rgba(255,255,255,0.1);
   color:white;
   cursor:pointer;
+  z-index:9999;
+  transition:0.3s;
+}
+
+.nav-controls button:hover{
+  background:#6366f1;
+  transform:scale(1.1);
+}
+
+.nav-controls button:first-child{
+  top:20px;
+  left:20px;
+}
+
+.nav-controls button:last-child{
+  top:20px;
+  left:75px;  /* gap */
 }
 
 /* TITLE */
 
 .title{
   text-align:center;
+  margin-top:60px;
   margin-bottom:30px;
 }
 
@@ -48,7 +73,7 @@ body{
 /* SECTIONS */
 
 section{
-  margin-bottom:50px;
+  margin:50px 40px;  /* 🔥 yaha spacing de */
 }
 
 /* GRID */
