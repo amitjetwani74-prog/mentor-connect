@@ -9,66 +9,87 @@
 
 <body>
 
-<div class="login-page">
-
-<div class="login-header">
-
-<div class="logo">
-<img src="images/logo-icon.png">
-<span>MentorConnect</span>
+<!-- NAV -->
+<div class="nav-controls">
+  <button onclick="history.back()">←</button>
+  <button onclick="window.location.href='index.html'">🏠</button>
 </div>
 
-<a class="support">Support</a>
+<div class="login-container">
+
+  <!-- LEFT PANEL -->
+  <div class="left-panel modern">
+    <h2>Welcome Back</h2>
+
+    <div class="features modern">
+      <p><b>📚 1-on-1 Mentorship</b><br>Direct access to industry leaders</p>
+
+      <p><b>🎯 Mock Interviews</b><br>Real-world practice scenarios</p>
+      
+      <p><b>📈 Career Guidance</b><br>Structured growth roadmap</p>
+    </div>
+
+    <small>Trusted by 500+ Engineering Teams worldwide.</small>
+  </div>
+
+
+  <!-- RIGHT SIDE -->
+  <div class="login-page modern">
+
+    <div class="login-card modern">
+
+      <!-- TOP LOGO -->
+      <div class="card-logo" style="position:static; justify-content:center; margin-bottom:15px;">
+        <img src="images/logo.png">
+        <span class="mentor">Mentor</span><span class="connect">Connect</span>
+      </div>
+
+      <!-- ICON -->
+      <div style="text-align:center; font-size:22px; margin-bottom:10px;">🛡️</div>
+
+      <h2>Secure Access</h2>
+      <p class="subtitle">Log in to continue your growth journey</p>
+
+      <!-- SOCIAL LOGIN -->
+      <div class="social-login">
+        <button class="google">
+          <img src="https://cdn-icons-png.flaticon.com/512/300/300221.png">
+          Google
+        </button>
+
+        <button class="linkedin">
+          <img src="https://cdn-icons-png.flaticon.com/512/174/174857.png">
+          LinkedIn
+        </button>
+      </div>
+
+      <div class="divider">
+        <span>OR CONTINUE WITH EMAIL</span>
+      </div>
+
+      <!-- FORM -->
+      <label>Email</label>
+      <input id="loginEmail" type="email" placeholder="name@company.com">
+
+      <label>Password</label>
+      <input id="loginPassword" type="password" placeholder="••••••••">
+
+      <div style="text-align:right; font-size:12px; margin-top:5px;">
+  <a href="#" style="color:#6366f1; text-decoration:none;">Forgotpassword?</a>
+</div>
+
+      <button class="login-btn" onclick="loginUser()">Login to Dashboard →</button>
+
+      <p class="signup-link">
+        Don’t have an account? <a href="signup.html">Sign up</a>
+      </p>
+
+    </div>
+
+  </div>
 
 </div>
 
-
-<div class="login-card">
-
-<h2>Welcome Back</h2>
-<p class="subtitle">Log in to continue your growth journey</p>
-
-
-<div class="social-login">
-
-<button class="google">
-<img src="https://cdn-icons-png.flaticon.com/512/300/300221.png">
-Google
-</button>
-
-<button class="linkedin">
-<img src="https://cdn-icons-png.flaticon.com/512/174/174857.png">
-LinkedIn
-</button>
-
-</div>
-
-
-<div class="divider">
-<span>OR CONTINUE WITH EMAIL</span>
-</div>
-
-<input id="loginEmail" type="email" placeholder="Enter your email">
-<input id="loginPassword" type="password" placeholder="Enter your password">
-
-<button class="login-btn" onclick="loginUser()">Login →</button>
-
-<p class="signup-link">
-Don’t have an account? <a href="signup.html">Sign up</a>
-</p>
-
-</div>
-
-
-<div class="footer">
-
-<a>Privacy Policy</a>
-<a>Terms of Service</a>
-<a>Cookies Settings</a>
-
-</div>
-
-</div>
 
 <script>
 

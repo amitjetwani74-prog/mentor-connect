@@ -1,108 +1,107 @@
 <!DOCTYPE html>
 <html>
 <head>
-
 <title>Create Account - MentorConnect</title>
 <link rel="stylesheet" href="css/auth.css">
-
 </head>
 
 <body>
 
-<div class="login-page">
-
-<div class="login-header">
-
-<div class="logo">
-<img src="images/logo-icon.png">
-<span>MentorConnect</span>
+<!-- NAV BUTTONS -->
+<div class="nav-controls">
+  <button onclick="history.back()">←</button>
+  <button onclick="window.location.href='index.html'">🏠</button>
 </div>
 
-<a href="login.html" class="support">Already have an account? Log in</a>
+<div class="signup-container">
+
+  <!-- LEFT PANEL -->
+  <div class="left-panel">
+    <h2>Join the community</h2>
+    <p>Start your journey with expert mentors 🚀</p>
+
+    <div class="features">
+      <p>✔ Personalized Guidance</p>
+      <p>✔ Industry Mentors</p>
+      <p>✔ Career Growth</p>
+    </div>
+  </div>
+
+  <!-- RIGHT SIDE -->
+  <div class="signup-right">
+
+    <div class="signup-card">
+
+      <!-- LOGO -->
+      <div class="signup-logo">
+        <img src="images/logo.png">
+        <span class="mentor">Mentor</span><span class="connect">Connect</span>
+      </div>
+
+      <h2>Create Account</h2>
+      <p class="subtitle">Join the community and start your journey</p>
+
+      <!-- FORM -->
+      <label>Full Name</label>
+      <input id="name" type="text" placeholder="John Doe">
+
+      <label>Email Address</label>
+      <input id="email" type="email" placeholder="example@email.com">
+
+      <label>I want to...</label>
+
+      <div class="account-type">
+        <div class="type active" onclick="selectType(this,'mentee')">
+          📖 Find a Mentor
+        </div>
+
+        <div class="type" onclick="selectType(this,'mentor')">
+          🎓 Become a Mentor
+        </div>
+      </div>
+
+      <label>Password</label>
+      <input id="password" type="password" placeholder="••••••••">
+
+      <label>Confirm Password</label>
+      <input id="confirmPassword" type="password" placeholder="••••••••">
+
+      <div class="terms">
+        <input id="terms" type="checkbox">
+        <span>By creating an account, you agree to our <b>Terms</b> and <b>Privacy Policy</b>.</span>
+      </div>
+
+      <button type="button" class="login-btn" onclick="createAccount()">
+        Create Account →
+      </button>
+
+      
+      <p class="signup-link">
+        Already have an account? <a href="login.html">Log in</a>
+      </p>
+      
+      <div class="divider">
+        <span>OR CONTINUE WITH</span>
+      </div>
+      
+      <div class="social-login">
+        <button onclick="socialLogin('google')">
+          <img src="https://cdn-icons-png.flaticon.com/512/300/300221.png">
+          Google
+        </button>
+
+        <button onclick="socialLogin('facebook')">
+          <img src="https://cdn-icons-png.flaticon.com/512/124/124010.png">
+          Facebook
+        </button>
+      </div>
+
+
+    </div>
+
+  </div>
 
 </div>
-
-
-<div class="login-card">
-
-<h2>Create Account</h2>
-<p class="subtitle">Join the community and start your journey</p>
-
-
-<label>Full Name</label>
-<input id="name" type="text" placeholder="John Doe">
-
-
-<label>Email Address</label>
-<input id="email" type="email" placeholder="example@email.com">
-
-
-<label>I want to...</label>
-
-<div class="account-type">
-
-<div class="type active" onclick="selectType(this,'mentee')">
-📖 Find a Mentor
-</div>
-
-<div class="type" onclick="selectType(this,'mentor')">
-🎓 Become a Mentor
-</div>
-
-</div>
-
-
-<label>Password</label>
-<input id="password" type="password" placeholder="••••••••">
-
-
-<label>Confirm Password</label>
-<input id="confirmPassword" type="password" placeholder="••••••••">
-
-
-<div class="terms">
-<input id="terms" type="checkbox">
-<span>By creating an account, you agree to our <b>Terms</b> and <b>Privacy Policy</b>.</span>
-</div>
-
-
-<button type="button" class="login-btn" onclick="createAccount()">
-Create Account →
-</button>
-
-
-<p class="signup-link">
-Already have an account? <a href="login.html">Log in</a>
-</p>
-
-
-<div class="divider">
-<span>Or continue with</span>
-</div>
-
-<div class="social-login">
-
-<button onclick="socialLogin('google')">
-<img src="https://cdn-icons-png.flaticon.com/512/281/281764.png">
-Google
-</button>
-
-<button onclick="socialLogin('facebook')">
-<img src="https://cdn-icons-png.flaticon.com/512/124/124010.png">
-Facebook
-</button>
-
-</div>
-
-
-<p class="footer-text">
-© 2024 MentorConnect. Empowering growth through connection.
-</p>
-
-</div>
-
-</div>
-
 
 <!-- JS -->
 <script>
@@ -110,60 +109,50 @@ Facebook
 let selectedType = "mentee";
 
 function selectType(el,type){
-selectedType = type;
+  selectedType = type;
 
-document.querySelectorAll(".type").forEach(t=>{
-t.classList.remove("active");
-});
+  document.querySelectorAll(".type").forEach(t=>{
+    t.classList.remove("active");
+  });
 
-el.classList.add("active");
-
-localStorage.setItem("userType", type);
+  el.classList.add("active");
+  localStorage.setItem("userType", type);
 }
-
 
 function createAccount(){
 
-let name = document.querySelector('input[placeholder="John Doe"]').value;
-let email = document.querySelector('input[placeholder="example@email.com"]').value;
-let password = document.querySelectorAll('input[type="password"]')[0].value;
+  let name = document.getElementById("name").value;
+  let email = document.getElementById("email").value;
+  let password = document.getElementById("password").value;
 
-if(name==="" || email==="" || password===""){
-alert("Please fill all fields");
-return;
+  if(name==="" || email==="" || password===""){
+    alert("Please fill all fields");
+    return;
+  }
+
+  localStorage.setItem("userName", name);
+  localStorage.setItem("userEmail", email);
+  localStorage.setItem("isLoggedIn","true");
+
+  window.location.href = "index.html";
 }
-
-localStorage.setItem("userName", name);
-localStorage.setItem("userEmail", email);
-
-/* 🔥 IMPORTANT */
-localStorage.setItem("isLoggedIn","true");
-
-let type = localStorage.getItem("userType");
-
-window.location.href = "index.html";
-
-}
-
 
 function socialLogin(type){
 
-localStorage.setItem("userName", type + " User");
-localStorage.setItem("userEmail", type + "@demo.com");
+  localStorage.setItem("userName", type + " User");
+  localStorage.setItem("userEmail", type + "@demo.com");
+  localStorage.setItem("isLoggedIn","true");
 
-/* 🔥 IMPORTANT */
-localStorage.setItem("isLoggedIn","true");
+  let userType = localStorage.getItem("userType") || "mentee";
 
-let userType = localStorage.getItem("userType") || "mentee";
-
-if(userType==="mentor"){
-window.location.href = "mentor-dashboard.html";
-}else{
-window.location.href = "mentors.html";
-}
-
+  if(userType==="mentor"){
+    window.location.href = "mentor-dashboard.html";
+  }else{
+    window.location.href = "mentors.html";
+  }
 }
 
 </script>
+
 </body>
 </html>
