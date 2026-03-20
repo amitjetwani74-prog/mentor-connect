@@ -1,18 +1,29 @@
 body{
 font-family:Arial;
 margin:0;
-background:#f4f6fb;
+background:#0f0c29;
 display:flex;
 justify-content:center;
+align-items:center;
+min-height:100vh;
 padding:20px;
 }
 
 .dashboard{
-width:420px;
-background:white;
-border-radius:20px;
-padding:20px;
-box-shadow:0 10px 30px rgba(0,0,0,0.1);
+  width:90%;
+  max-width:1100px;   /* 🔥 same as other pages */
+  background:white;
+  border-radius:20px;
+  padding:20px;
+  box-shadow:0 30px 60px rgba(0,0,0,0.4);
+}
+
+.mentor{
+  color:#6366f1;
+}
+
+.connect{
+  color:#22c55e;
 }
 
 .topbar{
@@ -26,10 +37,11 @@ margin-bottom:20px;
 display:flex;
 align-items:center;
 font-weight:bold;
+gap:5px;
 }
 
 .logo img{
-height:30px;
+height:28px;
 margin-right:8px;
 }
 
