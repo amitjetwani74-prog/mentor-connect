@@ -1,0 +1,39 @@
+/* ===== GLOBAL MOBILE FIX ===== */
+
+@media(max-width:900px){
+
+  body{
+    display:block !important;
+    min-height:auto !important;
+  }
+
+  html, body{
+    overflow-x:hidden;
+  }
+
+  div, section{
+    max-width:100%;
+  }
+
+  *{
+    box-sizing:border-box;
+  }
+
+  [style*="height:100vh"],
+  .full-height,
+  .hero{
+    height:auto !important;
+    min-height:100vh;
+  }
+
+  .row,
+  .flex{
+    flex-direction:column !important;
+  }
+
+  img{
+    max-width:100%;
+    height:auto;
+  }
+
+}
