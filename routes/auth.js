@@ -55,7 +55,7 @@ if(!match){
 return res.status(400).json({msg:"Incorrect password"})
 }
 
-const token = jwt.sign({id:user._id},"secret123")
+const token = jwt.sign({id:user._id}, process.env.JWT_SECRET)
 
 res.json({
 msg:"Login successful",
