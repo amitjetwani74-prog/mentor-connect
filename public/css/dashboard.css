@@ -18,8 +18,8 @@ padding:20px;
   box-shadow:0 30px 60px rgba(0,0,0,0.4);
 }
 
-.mentor{
-  color:#6366f1;
+.mentor-text{
+  color:#4f46e5;
 }
 
 .connect{
@@ -37,12 +37,19 @@ margin-bottom:20px;
 display:flex;
 align-items:center;
 font-weight:bold;
-gap:5px;
+gap:6px;
+}
+
+.logo span{
+  position:relative;
+  /* top:1px; */
+  line-height:1;        /* 🔥 removes vertical mismatch */
 }
 
 .logo img{
 height:28px;
 margin-right:8px;
+display:block;
 }
 
 .icons{

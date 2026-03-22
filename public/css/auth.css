@@ -198,19 +198,25 @@ input{
 }
 
 .signup-card{
+  position:relative;
   margin-top:20px;
   width:100%;
-  max-width:380px;  /* tighter */
+  max-width:380px;
+  padding-top:80px; 
+  
 }
 
 /* 🔥 SIGNUP LOGO (FIXED TOP LEFT) */
 .signup-logo{
   position:absolute;
-  top:15px;
-  left:20px;
+  top:20px;
+  left:50%;
+  transform:translateX(-50%);
+
+
   display:flex;
   align-items:center;
-  gap:8px;
+  gap:6px;
   font-weight:bold;
 }
 
@@ -219,9 +225,24 @@ input{
 }
 
 /* spacing */
-.signup-card h2{
+/* .signup-card h2{
   margin-top:40px;
+} */
+
+.signup-logo span{
+  position:relative;
+  top:1px;
 }
+
+.mentor{
+  color:#4f46e5;   /* 🔥 perfect purple (same theme color) */
+}
+
+.connect{
+  color:#22c55e;   /* green */
+}
+
+
 
 /* ================= FORM ================= */
 
